@@ -25,3 +25,13 @@ it generates these code dynamically on the fly :
   <input  name='rb2' type='radio'  />none-Conventinal</input>
 </div>
 ```
+
+##API
+  radioBox(title,array) ;       //appends a radio box to the document with the specifed title and elements
+  checkBox(title,array) ;       //appends a checkbox to the document  with the specifed title and elements
+  line();                       //appends a horizontal rule(line) to the document 
+  label(title,css);             //appends a label box to the document with specified title and style sheet
+  range(title,val,id);          //appends a range input tag to the document with specified arguments
+  table();                      //appends a table element to the document and returns it.
+  TableRow(table);              //appends a table row element into the specified table.
+  TableCell(TableRow,content);  //appends a table cell element into specified table row element.
