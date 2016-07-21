@@ -7,7 +7,7 @@ the easier aproach is to focus on javascript which is able to produce the html d
 
 Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3 skills.
 
-[**Demo**](https://dl.dropboxusercontent.com/u/68089598/projs/Focus/demo.html "Demo")
+## [**Demo**](https://dl.dropboxusercontent.com/u/68089598/projs/Focus/demo.html "Demo")
 
 ## key concept
 when you use Focus.js functions,It **generates Html elements dynamically on the fly**.
