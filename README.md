@@ -23,6 +23,7 @@ It **generates Html DOM elements dynamically on the fly**.
   - Full compatibility.
   - Minimum learning curve and easy to use.
   - Lightweight.
+  
 ## key concept
 when you use Focus.js functions,It **generates Html elements dynamically on the fly**.
 
