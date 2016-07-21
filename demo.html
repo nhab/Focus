@@ -12,15 +12,15 @@
 			
 				<script>
 					window.onload = function() {
-						
-						radioBox("Type",["Conventinal","non-conventional"]);
+						var doc=document.body;
+						radioBoxes("Type",["Conventinal","non-conventional"]);
 						line();
-						checkBox("Features I would like to have",["cashback","Lifestyle","Travel"]);
+						checkBoxes("Features I would like to have",["cashback","Lifestyle","Travel"]);
 						line();
 						range("My Monthly  ",90,"myRange");
-						label("My prefferation" ,"head1");
+						label(doc,  "My prefferation" ,"head1");
 						line();
-						var t=table();
+						var t=table(doc);
 						var r=tableRow(t);
 						var c=tableCell(r,"cell 	dfsdfd");
 						var c=tableCell(r,"cell2	fd");
