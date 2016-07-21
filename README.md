@@ -16,7 +16,7 @@ It **generates Html DOM elements dynamically on the fly**.
   - :pisces: Much less coding.
   - :no_mobile_phones: Much less errors.
   - :repeat: Much easier to follow your code.
-  - :eight_spoked_asterisk: Straightforward debugging.
+  - :eight_spoked_asterisk: [Straightforward debugging.]( "You can`t comment html as easy as commenting a function in javascript"
   - :fast_forward: Much more speed of product delivery.
   - :diamond_shape_with_a_dot_inside: Endless posibilities and extensibility
   - :do_not_litter: Minimum dependency.
