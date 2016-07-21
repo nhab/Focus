@@ -27,6 +27,7 @@ it generates these code dynamically on the fly :
 ```
 
 ##API
+```javascript
   radioBox(title,array) ;       //appends a radio box to the document with the specifed title and elements
   checkBox(title,array) ;       //appends a checkbox to the document  with the specifed title and elements
   line();                       //appends a horizontal rule(line) to the document 
@@ -35,3 +36,4 @@ it generates these code dynamically on the fly :
   table();                      //appends a table element to the document and returns it.
   TableRow(table);              //appends a table row element into the specified table.
   TableCell(TableRow,content);  //appends a table cell element into specified table row element.
+```
