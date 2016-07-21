@@ -1,3 +1,5 @@
+![FOCUS.JS](https://github.com/nhab/Focus/raw/master/Focus-logo.png "Focus.Js")
+
 # Focus.js
 Traditional web developement aproach needs more than 3 programming skill to write a single website:html,javascript
 and css ,plus thousands of libraries/frameworks.
