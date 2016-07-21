@@ -15,7 +15,7 @@ For example when you write:
 ```
 
 it generates these code dynamically on the fly :
-```
+```html
 <div>
   <p> Type </p>
   <input  name='rb1' type='radio'  />Conventinal</input>
