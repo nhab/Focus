@@ -58,14 +58,14 @@ function table()
 	return x;
 }
 /*__________________________________________________*/
-function TableRow(table)
+function tableRow(table)
 {
     var y = document.createElement("TR");
     //y.setAttribute("id", "myTr");
     return table.appendChild(y);
 }
 /*__________________________________________________*/
-function TableCell(TableRow,content)
+function tableCell(TableRow,content)
 {
     var z = document.createElement("TD");
     var t = document.createTextNode(content);
