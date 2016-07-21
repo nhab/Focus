@@ -6,6 +6,7 @@ and css ,plus thousands of libraries/frameworks.
 the easier aproach is to focus on javascript which is able to produce the html dom elements and css.
 
 Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3 skills.
+
 It **generates Html DOM elements dynamically on the fly**.
 ## [**Demo**](https://dl.dropboxusercontent.com/u/68089598/projs/Focus/demo.html "Demo")
 
