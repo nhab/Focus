@@ -1,4 +1,5 @@
 ![FOCUS.JS](https://github.com/nhab/Focus/raw/master/Focus-logo.png "Focus.Js")
+![]( https://github.com/nhab/Focus/blob/master/moto.png?raw=true "")
 
 # Focus.js
 Traditional web developement aproach needs more than 3 programming skill to write a single website:html,javascript
