@@ -49,6 +49,6 @@ it generates these code dynamically on the fly :
   label(title,css);             //appends a label box to the document with specified title and style sheet
   range(title,val,id);          //appends a range input tag to the document with specified arguments
   table();                      //appends a table element to the document and returns it.
-  TableRow(table);              //appends a table row element into the specified table.
-  TableCell(TableRow,content);  //appends a table cell element into specified table row element.
+  tableRow(table);              //appends a table row element into the specified table.
+  tableCell(TableRow,content);  //appends a table cell element into specified table row element.
 ```
