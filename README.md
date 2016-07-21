@@ -12,9 +12,9 @@ It **generates Html DOM elements dynamically on the fly**.
 ## [**Demo**](https://dl.dropboxusercontent.com/u/68089598/projs/Focus/demo.html "Demo")
 
 ## Benifits
-  - Focus on coding instead of disruption made by switching between skills.
-  - Much less coding.
-  - Much less errors.
+  - :arrow_right: Focus on coding instead of disruption made by switching between skills.
+  - :pisces: Much less coding.
+  - :no_mobile_phones: Much less errors.
   - Much easier to follow your code.
   - Straightforward debugging.
   - Much more speed of product delivery.
