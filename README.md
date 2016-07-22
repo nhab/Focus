@@ -43,12 +43,20 @@ it generates these code dynamically on the fly :
 
 ##API
 ```javascript
-  radioBox(title,array) ;       //appends a radio box to the document with the specifed title and elements
-  checkBox(title,array) ;       //appends a checkbox to the document  with the specifed title and elements
-  line();                       //appends a horizontal rule(line) to the document 
-  label(title,css);             //appends a label box to the document with specified title and style sheet
+  radioBoxes(title,array) ;       //appends a radio box to the document with the specifed title and elements
+  checkBoxes(title,array) ;       //appends a checkbox to the document  with the specifed title and elements
+  line(parent);                 //appends a horizontal rule(line) to the document 
+  newLine(parent);              //appends a line feed (<br> element) to the parent
+  
   range(title,val,id);          //appends a range input tag to the document with specified arguments
-  table();                      //appends a table element to the document and returns it.
+  table(parent,css);            //appends a table element to the document and returns it.
   tableRow(table);              //appends a table row element into the specified table.
   tableCell(TableRow,content);  //appends a table cell element into specified table row element.
+  label(parent,title,css);     //appends a label box to the document with specified title and style sheet
+  checkBox(parent,title,css);
+  list(parent,css);
+  listItem(parent,text,css);
+  Lists(parent,arrItems,css);
+  image(parent,source,css);
+  button(parent,title,css);
 ```
