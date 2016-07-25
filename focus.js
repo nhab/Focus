@@ -42,13 +42,37 @@ function checkBoxes(title,arr)
 	$( "body" ).append(s);
 }
 /*__________________________________________________*/
-function range(title,val,id)
+var objVal;
+function range(parent,title,css,min,max,val)
 {
-	var s = "<div>";
-	s = s + "<p>"+title+"</p>";
-	s = s + "<input type='range' value='"+val+"' id='"+id+"' >";
-	s = s + "</div>";
-	$( "body" ).append(s);
+	var x = document.createElement("INPUT");
+	x.setAttribute("type", "range");
+	x.setAttribute("min", min);
+	x.setAttribute("max", max);
+	x.setAttribute("value", val);
+    x.className =css;
+	
+	var t = document.createTextNode(title);
+    document.body.appendChild(t);
+	
+	parent.appendChild(x);
+	
+	objVal = label(parent,"income");
+	objVal.innerHTML=x.value;
+	
+
+	var evt = $.Event('changed');
+    evt.val = x.value;
+
+    $(window).trigger(evt);
+	x.onchange=function(){
+		var event = new Event('chang');  // (*)
+		x.dispatchEvent(event);	
+		objVal.innerHTML=x.value;
+	
+	};
+	return x;
+	
 }
 /*__________________________________________________*/
 function list(parent,css)
@@ -118,6 +142,57 @@ function checkBox(parent,title,css)
 	return x;
 }
 /*__________________________________________________*/
+function simpleDatePicker(parent,title)
+	{
+		var x = document.createElement("DIV");
+		var lbl = document.createElement("DIV");
+		
+		objVal = label(x,title);
+		//load year
+		var ddY=document.createElement("SELECT");
+		
+		for(i=1850;i<=2100;i++)
+		{
+			var option = document.createElement("option");
+			option.text = i.toString();
+			ddY.add(option);
+		}
+		x.appendChild(ddY);
+		
+		//load mon
+		var ddM=document.createElement("SELECT");
+		
+		for(i=1;i<=12;i++)
+		{
+			var option = document.createElement("option");
+			option.text = i.toString();
+			ddM.add(option);
+		}
+		x.appendChild(ddM);
+		
+		//load day
+		var ddD=document.createElement("SELECT");
+		
+		for(i=1;i<=31;i++)
+		{
+			var option = document.createElement("option");
+			option.text = i.toString();
+			ddD.add(option);
+		}
+		x.appendChild(ddD);
+		parent.appendChild(x);
+		return x;
+	}
+/*__________________________________________________*/
+function Clear(node)
+{
+
+	while (node.firstChild) {
+		node.removeChild(node.firstChild);
+	}
+	return node;
+}
+/*__________________________________________________*/
 function table(parent,css)
 { 
 	var x = document.createElement("TABLE");
@@ -126,6 +201,7 @@ function table(parent,css)
 	parent.appendChild(x);
 	return x;
 }
+
 /*__________________________________________________*/
 function tableRow(table)
 {
@@ -137,9 +213,25 @@ function tableRow(table)
 function tableCell(TableRow,content)
 {
     var z = document.createElement("TD");
-    var t = document.createTextNode(content);
-    z.appendChild(t);
-    return TableRow.appendChild(z);
+	
+	if(content!="" && content!=undefined)
+	{
+		var t = document.createTextNode(content);
+		z.appendChild(t);
+	}
+    TableRow.appendChild(z);
+	return z;
+}
+/*__________________________________________________*/
+function link(parent,title,url,css)
+{
+	var x = document.createElement("A");
+	x.setAttribute("href", url);
+	x.innerHTML=title;
+    x.className =css;
+	parent.appendChild(x);
+    
+	return x;
 }
 /*__________________________________________________*/
 function addEvent(element, event, fn) {
