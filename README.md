@@ -50,10 +50,11 @@ it generates these code dynamically on the fly :
   label   (parent,title,css);            // appends a label box to the document with specified title and style sheet
   range   (parent,title,css,min,max,val);//appends a range input tag to the document with specified arguments
   checkBox(parent,title,css);            // appends a  checkbox to the document  with the specifed title and elements
+  dropDown(parent,title,arrItems,css);
   link    (parent,title,url,css)         // appends an 'A' html link 
   image   (parent,source,css);           // appends an image
   button  (parent,title,css);            //appends a button
-  
+  div     (parent,css);
   simpleDatePicker(parent,title);    // a very primitive DatePicker
   
   table   (parent,css);             // appends a table element to the document and returns it.
@@ -67,5 +68,10 @@ it generates these code dynamically on the fly :
   list      (parent,css);                 // appends a 'ul' list element
   listItem  (parent,text,css);        // appends a 'LI' item to the list
   
+  var fnWizPages=[];//an array of functions that create pages
+  wizard    (parent,i)            //a recursive function which start by calling to wizard(parent,0) onload.it uses fnWizPages
+  
   Clear(node) ;                    //Clears all child nodes of the element
+  AddHtml2Body(parent,sHtml);     //Appends a peice of html code to the document.body 
+  Addscript2Head(scriptUrl);      //Adds a script referencing url to the Head of current HTML
 ```
