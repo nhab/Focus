@@ -2,23 +2,42 @@ function a()
 {
 	alert("Test");
 }
+var fnWizPages=[];//an array of functions that create pages
 /*__________________________________________________*/
-function radioBoxes(parent,css,title,arr)
+function wizard(parent,i)
 {
-	
+	Clear(parent);
+	fnWizPages[i](parent);
+	btnNext = button (parent,"next","","button");
+	btnNext.addEventListener('clicked', 
+		function (e) {
+			wizard(parent,++i);
+		}  ,
+	false);
+
+	btnPrev = button (parent,"prev","","button");
+	btnPrev.addEventListener('clicked', 
+		function (e) {
+			wizard(parent,--i);
+		}  ,
+	false);
+}
+/*__________________________________________________*/
+function radioBoxes(parent,title,arrItems,css)
+{
 	var x = document.createElement("DIV");
     x.className =css;
 	x.innerHTML=title;
 	parent.appendChild(x);
-	
-	for(i=0;i<arr.length;i++)
+	var len=arrItems.length;
+	for(i=0;i<len;i++)
 	{
 		var x1 = document.createElement("input");
 		x1.className =css;
 		x1.type="radio";
 		x1.style="display:inline-block;";
 		x.appendChild(x1);
-		label(x,arr[i],css);
+		label(x,arrItems[i],css);
 	}
 	
 	return x;
@@ -40,49 +59,44 @@ function newLine(parent)
 	return x;
 }
 /*__________________________________________________*/
-function checkBoxes(parent,css,title,arr)
+function checkBoxes(parent,title,arrItems,css)
 {
 	var x = document.createElement("DIV");
     x.className =css;
 	x.innerHTML=title;
 	parent.appendChild(x);
 	
-	for(i=0;i<arr.length;i++)
+	for(i=0;i<arrItems.length;i++)
 	{
 		var x1 = document.createElement("input");
 		x1.className =css;
 		x1.type="checkbox";
 		x1.style="display:inline-block;";
 		x.appendChild(x1);
-		label(x,arr[i],css);
+		label(x,arrItems[i],css);
 	}
 	
 	return x;
 }
 /*__________________________________________________*/
 var objVal;
-function range(parent,title,css,min,max,val)
+function range(parent,title,arrValues ,css)
 {
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "range");
-	x.setAttribute("min", min);
-	x.setAttribute("max", max);
-	x.setAttribute("value", val);
+	x.setAttribute("min", arrValues[0]);
+	x.setAttribute("max", arrValues[1]);
+	x.setAttribute("value", arrValues[2]);
     x.className =css;
 	
 	var t = document.createTextNode(title);
-    //document.body.appendChild(t);
+    parent.appendChild(t);
 	
 	parent.appendChild(x);
 	
 	objVal = label(parent,"income");
 	objVal.innerHTML=x.value;
-	
 
-	var evt = $.Event('changed');
-    evt.val = x.value;
-
-    $(window).trigger(evt);
 	x.onchange=function(){
 		var event = new Event('chang');  // (*)
 		x.dispatchEvent(event);	
@@ -91,14 +105,6 @@ function range(parent,title,css,min,max,val)
 	};
 	return x;
 	
-}
-/*__________________________________________________*/
-function list(parent,css)
-{
-	var x = document.createElement("UL");
-    x.className =css;
-	parent.appendChild(x);
-	return x;
 }
 /*__________________________________________________*/
 function listItem(parent,text,css)
@@ -112,8 +118,10 @@ function listItem(parent,text,css)
 /*__________________________________________________*/
 function Lists(parent,arrItems,css)
 {
-	var  l  = list(parent,css);
-	
+	var l = document.createElement("UL");
+    l.className =css;
+	parent.appendChild(l);
+
 	var len = arrItems.length;
 	for(i=0;i<len;i++)
 		listItem(l,arrItems[i],css);
@@ -129,13 +137,37 @@ function image(parent,source,css)
 	return x;
 }
 /*__________________________________________________*/
-function button(parent,title,css)
+function button(parent,title,onclickFunction,css)
 {
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "button");
 	x.value= title;
     x.className =css;
+	x.onclick=onclickFunction;
 	parent.appendChild(x);
+	x.onclick=function(){
+		var event = new Event('clicked');  // (*)
+		x.dispatchEvent(event);	
+	};
+	return x;
+}
+/*__________________________________________________*/
+function div(parent,css)
+{
+	var x = document.createElement("div");
+    x.className =css;
+	parent.appendChild(x);
+	return x;
+}
+/*__________________________________________________*/
+function link(parent,title,url,css)
+{
+	var x = document.createElement("A");
+	x.setAttribute("href", url);
+	x.innerHTML=title;
+    x.className =css;
+	parent.appendChild(x);
+    
 	return x;
 }
 /*__________________________________________________*/
@@ -144,7 +176,7 @@ function label(parent,title,css)
 	var x = document.createElement("DIV");
 	x.innerHTML= title;
     x.className =css;
-	x.style="display:inline-block;";
+	x.style="display:inline-block; ";
 	parent.appendChild(x);
 	return x;
 }
@@ -158,6 +190,31 @@ function checkBox(parent,title,css)
 	parent.appendChild(x);
 	var t = document.createTextNode(title);
     document.body.appendChild(t);
+	return x;
+}
+/*__________________________________________________*/
+function textBox(parent,title,css)
+{
+	var x = document.createElement("INPUT");
+	x.setAttribute("type", "Text");
+	
+    x.className =css;
+	x.value=title;
+    parent.appendChild(x);
+	return x;
+}
+/*__________________________________________________*/
+function dropDown(parent,title,arrItems,css)
+{
+	var x = document.createElement("SELECT");
+	var len=arrItems.length;
+   	for(i=0;i<len;i++)
+	{
+		var option = document.createElement("option");
+		option.text = arrItems[i];
+		x.add(option);
+	}
+	parent.appendChild(x);
 	return x;
 }
 /*__________________________________________________*/
@@ -203,15 +260,6 @@ function simpleDatePicker(parent,title)
 		return x;
 	}
 /*__________________________________________________*/
-function Clear(node)
-{
-
-	while (node.firstChild) {
-		node.removeChild(node.firstChild);
-	}
-	return node;
-}
-/*__________________________________________________*/
 function table(parent,css)
 { 
 	var x = document.createElement("TABLE");
@@ -242,24 +290,34 @@ function tableCell(TableRow,content)
 	return z;
 }
 /*__________________________________________________*/
-function link(parent,title,url,css)
+function AddHtml2Body(parent,sHtml)
 {
-	var x = document.createElement("A");
-	x.setAttribute("href", url);
-	x.innerHTML=title;
-    x.className =css;
-	parent.appendChild(x);
-    
-	return x;
+	
+	parent.insertAdjacentHTML( 'beforeend', sHtml );
+	
 }
 /*__________________________________________________*/
-function addEvent(element, event, fn) {
-    if (element.addEventListener) {
-        element.addEventListener(event, fn, false);
-    } else {
-        element.attachEvent("on" + event, function() {
-            // set the this pointer same as addEventListener when fn is called
-            return(fn.call(element, window.event));   
-        });
-    }
+function Addscript2Head(scriptUrl)
+{
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;    
+
+	var h=	document.getElementsByTagName('head');
+	if(h.length>0 )
+		h[0].appendChild(script);
+	else
+		document.createElement('head').appendChild(script);
+
 }
+/*__________________________________________________*/
+
+function Clear(node)
+{
+
+	while (node.firstChild) {
+		node.removeChild(node.firstChild);
+	}
+	return node;
+}
+
