@@ -3,16 +3,25 @@ function a()
 	alert("Test");
 }
 /*__________________________________________________*/
-function radioBoxes(title,arr)
+function radioBoxes(parent,css,title,arr)
 {
-	s = "<div>";
-	s = s + "<p>"+title+"</p>";
-	for(i=0;i<arr.length;i++)
-		s = s + "<input  name='rb" + i + "' type='radio'  />"+arr[i]+"</input>";//
-	s=s+"</div>";
-	//console.log(s);
-	$( "body" ).append(s);
 	
+	var x = document.createElement("DIV");
+    x.className =css;
+	x.innerHTML=title;
+	parent.appendChild(x);
+	
+	for(i=0;i<arr.length;i++)
+	{
+		var x1 = document.createElement("input");
+		x1.className =css;
+		x1.type="radio";
+		x1.style="display:inline-block;";
+		x.appendChild(x1);
+		label(x,arr[i],css);
+	}
+	
+	return x;
 }
 /*__________________________________________________*/
 function line(parent)
@@ -31,15 +40,24 @@ function newLine(parent)
 	return x;
 }
 /*__________________________________________________*/
-function checkBoxes(title,arr)
+function checkBoxes(parent,css,title,arr)
 {
-	var s = "<div>";
-	s = s + "<p>"+title+"</p>";
+	var x = document.createElement("DIV");
+    x.className =css;
+	x.innerHTML=title;
+	parent.appendChild(x);
+	
 	for(i=0;i<arr.length;i++)
-		s = s + "<input  name='rb" + i + "' type='checkbox'  >"+arr[i]+"</input>";//
-	s=s+"</div>";
-	//console.log(s);
-	$( "body" ).append(s);
+	{
+		var x1 = document.createElement("input");
+		x1.className =css;
+		x1.type="checkbox";
+		x1.style="display:inline-block;";
+		x.appendChild(x1);
+		label(x,arr[i],css);
+	}
+	
+	return x;
 }
 /*__________________________________________________*/
 var objVal;
@@ -53,7 +71,7 @@ function range(parent,title,css,min,max,val)
     x.className =css;
 	
 	var t = document.createTextNode(title);
-    document.body.appendChild(t);
+    //document.body.appendChild(t);
 	
 	parent.appendChild(x);
 	
@@ -126,6 +144,7 @@ function label(parent,title,css)
 	var x = document.createElement("DIV");
 	x.innerHTML= title;
     x.className =css;
+	x.style="display:inline-block;";
 	parent.appendChild(x);
 	return x;
 }
