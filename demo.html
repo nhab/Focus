@@ -13,11 +13,11 @@
 				<script>
 					window.onload = function() {
 						var doc=document.body;
-						radioBoxes("Type",["Conventinal","non-conventional"]);
+						radioBoxes(doc,"","Type",["Conventinal","non-conventional"]);
 						line();
-						checkBoxes("Features I would like to have",["cashback","Lifestyle","Travel"]);
+						checkBoxes(doc,"","Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
 						line();
-						range("My Monthly  ",90,"myRange");
+						range(doc,"My Monthly  ",90,"myRange");
 						label(doc,  "My prefferation" ,"head1");
 						line();
 						var t=table(doc);
