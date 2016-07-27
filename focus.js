@@ -4,21 +4,26 @@ function a()
 }
 var fnWizPages=[];//an array of functions that create pages
 /*__________________________________________________*/
-function wizard(parent,i)
+function wizard(parent,fnWizPages)
+{
+	 wizard1(parent,0,fnWizPages);
+}
+/*__________________________________________________*/
+function wizard1(parent,i,fnWizPages)
 {
 	Clear(parent);
 	fnWizPages[i](parent);
 	btnNext = button (parent,"next","","button");
 	btnNext.addEventListener('clicked', 
 		function (e) {
-			wizard(parent,++i);
+			wizard1(parent,++i,fnWizPages);
 		}  ,
 	false);
 
 	btnPrev = button (parent,"prev","","button");
 	btnPrev.addEventListener('clicked', 
 		function (e) {
-			wizard(parent,--i);
+			wizard1(parent,--i,fnWizPages);
 		}  ,
 	false);
 }
