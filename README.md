@@ -68,8 +68,8 @@ it generates these code dynamically on the fly :
   list      (parent,css);                 // appends a 'ul' list element
   listItem  (parent,text,css);        // appends a 'LI' item to the list
   
-  var fnWizPages=[];//an array of functions that create pages
-  wizard    (parent,i)            //a recursive function which start by calling to wizard(parent,0) onload.it uses fnWizPages
+  
+  wizard    (parent,fnWizPagesArray)            //appends a wizard element .fnWizPagesArray is an array of functions that create pages
   
   Clear(node) ;                    //Clears all child nodes of the element
   AddHtml2Body(parent,sHtml);     //Appends a peice of html code to the document.body 
