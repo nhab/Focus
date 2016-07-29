@@ -3,49 +3,100 @@ function a()
 	alert("Test");
 }
 var fnWizPages=[];//an array of functions that create pages
-/*__________________________________________________*/
-function wizard(parent,fnWizPages)
-{
-	 wizard1(parent,0,fnWizPages);
-}
-/*__________________________________________________*/
-function wizard1(parent,i,fnWizPages)
-{
-	Clear(parent);
-	fnWizPages[i](parent);
-	btnNext = button (parent,"next","","button");
-	btnNext.addEventListener('clicked', 
-		function (e) {
-			wizard1(parent,++i,fnWizPages);
-		}  ,
-	false);
 
-	btnPrev = button (parent,"prev","","button");
-	btnPrev.addEventListener('clicked', 
-		function (e) {
-			wizard1(parent,--i,fnWizPages);
-		}  ,
-	false);
+/*__________________________________________________*/
+function wizard(parent,fnWizPages,data)
+{
+	 return wizard1(parent,0,fnWizPages,data);
 }
 /*__________________________________________________*/
-function radioBoxes(parent,title,arrItems,css)
+function wizard1(parent,i,fnWizPages,data)
+{
+	Clear       ( parent);
+
+	data=fnWizPages[i](parent,data)  ;
+			
+	if(i<fnWizPages.length-1)
+	{
+		btnNext = button (parent,"next","","button");
+		btnNext.addEventListener('clicked', 
+		function (e) {
+			var event = new Event('nextClicked');
+			this.dispatchEvent(event);
+			console.log(e.target);
+	
+			data= wizard1(parent,++i,fnWizPages,data);
+		}
+		,	false );
+	};
+
+	if(i>0)
+	{
+		btnPrev = button (parent,"prev","","button");
+		btnPrev.addEventListener('clicked', 
+			function (e) {
+		var event = new Event('prevClicked');
+		this.dispatchEvent(event);
+		console.log("prev pressed:",data);	
+		data= wizard1(parent,--i,fnWizPages,data);
+		}
+		,	false);
+	};
+	
+	return data;
+}
+
+
+
+/*__________________________________________________*/
+
+function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel has selectedIndex property of type int
 {
 	var x = document.createElement("DIV");
     x.className =css;
 	x.innerHTML=title;
 	parent.appendChild(x);
 	var len=arrItems.length;
+	var sName= "radio"+Math.floor((1 + Math.random()) * 0x1000000).toString();
+	
 	for(i=0;i<len;i++)
-	{
+	{		
 		var x1 = document.createElement("input");
 		x1.className =css;
 		x1.type="radio";
 		x1.style="display:inline-block;";
+		x1.id="rb"+i;
+		
+		x1.name=sName;
+		if(radioBoxesModel.selectedIndex==i)
+		{
+			x1.checked="checked";			
+		}
+		x1.onchange=function(){
+			if(x1.checked=="checked")
+			{
+				var event = new Event('change');
+				event.selected = x1.id.substring(2);
+				x.dispatchEvent(event);	
+			  	
+				radioBoxesModel.selectedIndex=	x1.id.substring(2);
+			  //aa=	x1.id.substring(2);
+			}
+		};
 		x.appendChild(x1);
 		label(x,arrItems[i],css);
 	}
 	
 	return x;
+}
+/*__________________________________________________*/
+function rbGetData(rbx)
+{
+	rbx.addEventListener('change',onRadioBoxesChange,false);
+	function onRadioBoxesChange(e) {
+			if(e.target.checked)
+			return  e.target.id.substring(2);
+		};
 }
 /*__________________________________________________*/
 function line(parent)
@@ -198,13 +249,20 @@ function checkBox(parent,title,css)
 	return x;
 }
 /*__________________________________________________*/
-function textBox(parent,title,css)
+function textBox(parent,title,val,css)
 {
+	if(title!="" && title !=undefined)
+	{
+		var t = document.createTextNode(title);
+    	parent.appendChild(t);
+	}
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "Text");
 	
+	
     x.className =css;
-	x.value=title;
+	if(val!="" && val !=undefined)
+		x.value=val;
     parent.appendChild(x);
 	return x;
 }
@@ -288,11 +346,23 @@ function tableCell(TableRow,content)
 	
 	if(content!="" && content!=undefined)
 	{
+	
 		var t = document.createTextNode(content);
 		z.appendChild(t);
+		
 	}
     TableRow.appendChild(z);
 	return z;
+}
+/*__________________________________________________*/
+function tableRowTextbox(tb,title)
+{
+	
+	var r = tableRow  ( tb);
+	var c1 = tableCell ( r);
+	label(c1, title);
+	var c2 = tableCell ( r);
+	textBox(c2);
 }
 /*__________________________________________________*/
 function AddHtml2Body(parent,sHtml)
