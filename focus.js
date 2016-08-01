@@ -107,15 +107,7 @@ function radioBoxes_OnChange(radioboxes,onChangeFunction)
 {
 	radioboxes.addEventListener('change',onChangeFunction,false);
 }
-/*__________________________________________________*/
-function rbGetData(rbx)
-{
-	rbx.addEventListener('change',onRadioBoxesChange,false);
-	function onRadioBoxesChange(e) {
-			if(e.target.checked)
-			return  e.target.id.substring(2);
-		};
-}
+
 /*__________________________________________________*/
 function line(parent)
 {
