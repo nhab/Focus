@@ -99,7 +99,7 @@ function radioBoxes_set(radioboxes,indx)
 	for(i=0;i<len;i++)
 		if(radioboxes.children[i].id==id)
 			radioboxes.children[i].checked=true;
-	console.log(radioboxes);
+
 }
 /*__________________________________________________*/
 // onChangeFunction has a parameter which contain every details related to the event
