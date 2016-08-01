@@ -1,6 +1,6 @@
 {
   "name": "Focus.JS",
-  "tagline": "JavaScript Library framework",
-  "body": "### Welcome to Focus.js\r\n### What is Focus.js ?\r\n    Focus.js is a framework for web development which have changed many common practices to be more efficient.\r\n\r\n### Philosophy\r\n\r\nthere are a bunch of phylosophies and practices behind the focus.js including\r\n\r\n  - Focusing on one skill (javaScript) instead of lots of skills\r\n\r\n  - separation of real concerns\r\n\r\n    the real concerns in front-end part are:\r\n\r\n      struct      : structuring the page\r\n\r\n      state       : Initiating and maintaining the state of page`s elements during interactions. \r\n\r\n      presentation: how we present all these to users,including positioning and look and feel. \r\n\r\n\r\n  -\r\n",
+  "tagline": "JavaScript framework to focus instead of disruption",
+  "body": "### Welcome to Focus.js\r\n\r\n### What is Focus.js ?\r\n\r\n    -Focus.js is a framework for web development which have changed \r\n    many common practices to be more efficient.\r\n\r\n### Philosophy\r\n\r\nthere are a bunch of phylosophies and practices behind the focus.js including\r\n\r\n  - Focusing on one skill (javaScript) instead of lots of skills\r\n\r\n  - separation of real concerns\r\n\r\n    the real concerns in front-end part are:\r\n\r\n      struct      : structuring the page\r\n\r\n      state       : Initiating and maintaining the state of page`s elements during interactions. \r\n\r\n      presentation: how we present all these to users,including positioning and look and feel. \r\n\r\n\r\n  -\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
