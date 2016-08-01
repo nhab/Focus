@@ -68,10 +68,12 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 		x1.id="rb"+i;
 		
 		x1.name=sName;
+		/*
 		if(radioBoxesModel.selectedIndex==i)
 		{
 			x1.checked="checked";			
 		}
+		*/
 		x1.onchange=function(){
 			if(x1.checked=="checked")
 			{
@@ -79,8 +81,8 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 				event.selected = x1.id.substring(2);
 				x.dispatchEvent(event);	
 			  	
-				radioBoxesModel.selectedIndex=	x1.id.substring(2);
-			  //aa=	x1.id.substring(2);
+				//radioBoxesModel.selectedIndex=	x1.id.substring(2);
+			  
 			}
 		};
 		x.appendChild(x1);
@@ -88,6 +90,22 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 	}
 	
 	return x;
+}
+
+function radioBoxes_set(radioboxes,indx)
+{
+	var len=radioboxes.children.length;
+	var id="rb"+indx;
+	for(i=0;i<len;i++)
+		if(radioboxes.children[i].id==id)
+			radioboxes.children[i].checked=true;
+	console.log(radioboxes);
+}
+/*__________________________________________________*/
+// onChangeFunction has a parameter which contain every details related to the event
+function radioBoxes_OnChange(radioboxes,onChangeFunction)
+{
+	radioboxes.addEventListener('change',onChangeFunction,false);
 }
 /*__________________________________________________*/
 function rbGetData(rbx)
