@@ -1,0 +1,6 @@
+{
+  "name": "Focus",
+  "tagline": "",
+  "body": "### Welcome to Focus.js\r\n\r\n### Philosophy\r\nthere are a bunch of phylosophies and practices behind the focus.js including\r\n\r\n  separation of real concerns\r\n\r\n    the real concerns in front-end part are:\r\n\r\n      struct      : structuring the page\r\n\r\n      state       : Initiating and maintaining the state of page`s elements during interactions. \r\n\r\n      presentation: how we present all these to users,including positioning and look and feel. \r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
