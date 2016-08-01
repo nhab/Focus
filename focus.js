@@ -45,12 +45,9 @@ function wizard1(parent,i,fnWizPages,data)
 	
 	return data;
 }
-
-
-
 /*__________________________________________________*/
 
-function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel has selectedIndex property of type int
+function radioBoxes(parent,title,arrItems,css)
 {
 	var x = document.createElement("DIV");
     x.className =css;
@@ -68,12 +65,7 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 		x1.id="rb"+i;
 		
 		x1.name=sName;
-		/*
-		if(radioBoxesModel.selectedIndex==i)
-		{
-			x1.checked="checked";			
-		}
-		*/
+
 		x1.onchange=function(){
 			if(x1.checked=="checked")
 			{
@@ -81,8 +73,7 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 				event.selected = x1.id.substring(2);
 				x.dispatchEvent(event);	
 			  	
-				//radioBoxesModel.selectedIndex=	x1.id.substring(2);
-			  
+					  
 			}
 		};
 		x.appendChild(x1);
@@ -91,6 +82,7 @@ function radioBoxes(parent,title,arrItems,css,radioBoxesModel)//radioBoxesModel 
 	
 	return x;
 }
+/*__________________________________________________*/
 
 function radioBoxes_set(radioboxes,indx)
 {
