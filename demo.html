@@ -13,17 +13,18 @@
 					var doc=document.body;
 					var rbs=radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
 					radioBoxes_OnChange(rbs,onrbsChangeFunction);
+					/*
 					var onrbsChangeFunction=function(e)
 					{
 						debug.log(e);
-					}
+					}*/
 					line();
 					checkBoxes(doc,"Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
 					line();
 					range(doc,"My Monthly  ",90,"myRange");
 					label(doc,  "My prefferation" ,"head1");
 					line();
-					button(doc,"save data into memory and wipe the page");
+					//button(doc,"save data into memory and wipe the page");
 					var t=table(doc);
 					var r=tableRow(t);
 					var c=tableCell(r,"cell 	dfsdfd");
