@@ -11,7 +11,12 @@
 			<script>
 				window.onload = function() {
 					var doc=document.body;
-					radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
+					var rbs=radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
+					radioBoxes_OnChange(rbs,onrbsChangeFunction);
+					var onrbsChangeFunction=function(e)
+					{
+						debug.log(e);
+					}
 					line();
 					checkBoxes(doc,"Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
 					line();
