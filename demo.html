@@ -5,32 +5,29 @@
 		<link rel="stylesheet" type="text/css" href="Site.css" />
 		<script src="focus.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
 	</head>
 	<body>
 		<form>
-			
-				<script>
-					window.onload = function() {
+			<script>
+				window.onload = function() {
+					var doc=document.body;
+					radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
+					line();
+					checkBoxes(doc,"Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
+					line();
+					range(doc,"My Monthly  ",90,"myRange");
+					label(doc,  "My prefferation" ,"head1");
+					line();
+					button(doc,"save data into memory and wipe the page");
+					var t=table(doc);
+					var r=tableRow(t);
+					var c=tableCell(r,"cell 	dfsdfd");
+					var c=tableCell(r,"cell2	fd");
 					
-						var doc=document.body;
-						radioBoxes(doc,"","Type",["Conventinal","non-conventional"]);
-						line();
-						checkBoxes(doc,"","Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
-						line();
-						range(doc,"My Monthly  ",90,"myRange");
-						label(doc,  "My prefferation" ,"head1");
-						line();
-						button(doc,"save data into memory and wipe the page");
-						var t=table(doc);
-						var r=tableRow(t);
-						var c=tableCell(r,"cell 	dfsdfd");
-						var c=tableCell(r,"cell2	fd");
-						
-						console.log(t);
-					};
-				</script>
-		
+					console.log(t);
+				};
+			</script>
+
 		</form>
 	</body>
 </html>
