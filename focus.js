@@ -82,7 +82,7 @@ function range(parent,title,css,min,max,val)
 	var evt = $.Event('changed');
     evt.val = x.value;
 
-    $(window).trigger(evt);
+   // $(window).trigger(evt);
 	x.onchange=function(){
 		var event = new Event('chang');  // (*)
 		x.dispatchEvent(event);	
