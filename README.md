@@ -71,7 +71,7 @@ it generates these code dynamically on the fly :
  listItem(parent,text) // appends a 'LI' item to the list
  Lists(parent,arrItems)  // appends a 'ul' 
  
- //Intraction concern functions:
+ //Intractions and states concern functions:
   // onChangeFunction could have a parameter which contain every details related to the event
  onStateChange(obj,onChangeFunction)
  radioBoxes_setState(radioboxes,indx)
