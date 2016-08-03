@@ -3,6 +3,8 @@ function a()//for testing purposes :)
 	alert("Test");
 }
 var fnWizPages=[];//an array of functions that create pages
+
+//Intraction concern functions:
 /*__________________________________________________*/
 // onChangeFunction could have a parameter which contain every details related to the event
 function onStateChange(obj,onChangeFunction)
@@ -10,11 +12,14 @@ function onStateChange(obj,onChangeFunction)
 	obj.addEventListener('change',onChangeFunction,false);
 }
 /*__________________________________________________*/
+ //look and feel concern functions :
+ //you can also set style or css properties of each object to change its look and feel
 function CssSet(obj,cssName)
 {
 	
 	obj.className =cssName;
 }
+ //structure concern functions :
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
 {
@@ -73,7 +78,7 @@ function newLine(parent)
 	parent.appendChild(x);
 	return x;
 }
-
+ 
 /*__________________________________________________*/
 function radioBoxes(parent,title,arrItems,name)
 {
