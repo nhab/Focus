@@ -1,9 +1,24 @@
-function a()
+function a()//for testing purposes :)
 {
 	alert("Test");
 }
 var fnWizPages=[];//an array of functions that create pages
 
+//Intraction concern functions:
+/*__________________________________________________*/
+// onChangeFunction could have a parameter which contain every details related to the event
+function onStateChange(obj,onChangeFunction)
+{
+	obj.addEventListener('change',onChangeFunction,false);
+}
+/*__________________________________________________*/
+ //look and feel concern functions :
+function CssSet(obj,cssName)
+{
+	
+	obj.className =cssName;
+}
+ //structure concern functions :
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
 {
@@ -45,60 +60,6 @@ function wizard1(parent,i,fnWizPages,data)
 	
 	return data;
 }
-/*__________________________________________________*/
-
-function radioBoxes(parent,title,arrItems,css)
-{
-	var x = document.createElement("DIV");
-    x.className =css;
-	x.innerHTML=title;
-	parent.appendChild(x);
-	var len=arrItems.length;
-	var sName= "radio"+Math.floor((1 + Math.random()) * 0x1000000).toString();
-	
-	for(i=0;i<len;i++)
-	{		
-		var x1 = document.createElement("input");
-		x1.className =css;
-		x1.type="radio";
-		x1.style="display:inline-block;";
-		x1.id="rb"+i;
-		
-		x1.name=sName;
-
-		x1.onchange=function(){
-			if(x1.checked=="checked")
-			{
-				var event = new Event('change');
-				event.selected = x1.id.substring(2);
-				x.dispatchEvent(event);	
-			  	
-					  
-			}
-		};
-		x.appendChild(x1);
-		label(x,arrItems[i],css);
-	}
-	
-	return x;
-}
-/*__________________________________________________*/
-
-function radioBoxes_set(radioboxes,indx)
-{
-	var len=radioboxes.children.length;
-	var id="rb"+indx;
-	for(i=0;i<len;i++)
-		if(radioboxes.children[i].id==id)
-			radioboxes.children[i].checked=true;
-
-}
-/*__________________________________________________*/
-// onChangeFunction has a parameter which contain every details related to the event
-function radioBoxes_OnChange(radioboxes,onChangeFunction)
-{
-	radioboxes.addEventListener('change',onChangeFunction,false);
-}
 
 /*__________________________________________________*/
 function line(parent)
@@ -116,36 +77,129 @@ function newLine(parent)
 	parent.appendChild(x);
 	return x;
 }
+ 
 /*__________________________________________________*/
-function checkBoxes(parent,title,arrItems,css)
+function radioBoxes(parent,title,arrItems,name)
 {
 	var x = document.createElement("DIV");
-    x.className =css;
+    
+	x.innerHTML=title;
+	parent.appendChild(x);
+	var len=arrItems.length;
+	
+	var sName;
+	
+	if(name==undefined)
+	 	sName= "radio"+Math.floor((1 + Math.random()) * 0x1000000).toString();
+	else
+	 	sName=name;
+	
+	for(i=0;i<len;i++)
+	{		
+		var x1 = document.createElement("input");
+
+		x1.type="radio";
+		x1.style="display:inline-block;";
+		x1.id="rb"+i;
+		
+		x1.name=sName;
+
+		x1.onchange=function(){
+			/*
+			if(x1.checked=="checked")
+			{*/
+				//debugger;
+				var event = new Event('change');
+				x.dispatchEvent(event);
+			//}
+		};
+		x.appendChild(x1);
+		label(x,arrItems[i]);
+	}
+	
+	return x;
+}
+
+/*__________________________________________________*/
+function radioBoxes_setState(radioboxes,indx)
+{
+	var len=radioboxes.children.length;
+	var id="rb"+indx;
+	for(i=0;i<len;i++)
+		if(radioboxes.children[i].id==id)
+			radioboxes.children[i].checked=true;
+}
+/*__________________________________________________*/
+function radioBoxes_getState(radioboxes)
+{
+	var len=radioboxes.children.length;
+	for(i=0;i<len;i++)
+		if(radioboxes.children[i].checked)
+		   return radioboxes.children[i].id.substring(2);
+	return undefined;
+}
+
+/*__________________________________________________*/
+function checkBoxes(parent,title,arrItems)
+{
+	var x = document.createElement("DIV");
+
 	x.innerHTML=title;
 	parent.appendChild(x);
 	
 	for(i=0;i<arrItems.length;i++)
 	{
 		var x1 = document.createElement("input");
-		x1.className =css;
+	
 		x1.type="checkbox";
 		x1.style="display:inline-block;";
+		x1.id="cb"+i;
+		x1.onchange=function(){
+		
+				var event = new Event('change');
+				x.dispatchEvent(event);
+		
+		};
 		x.appendChild(x1);
-		label(x,arrItems[i],css);
+		label(x,arrItems[i]);
 	}
 	
 	return x;
 }
 /*__________________________________________________*/
+function checkBoxes_setState(checkboxes,indxes)
+{
+	var len=checkboxes.children.length;
+	
+	var j=0;
+	for(i=0;i<len;i++)
+		if(checkboxes.children[i].id=="cb"+indxes[j])
+		{
+			checkboxes.children[i].checked=true;
+			j++;
+		}
+}
+/*__________________________________________________*/
+function checkBoxes_getState(checkboxes)
+{
+	
+	var len=checkboxes.children.length;
+	var ret=[];
+	for(i=0;i<len;i++)
+		if(checkboxes.children[i].checked)
+		    ret.push( checkboxes.children[i].id.substring(2));
+	return ret;
+}
+/*__________________________________________________*/
+
 var objVal;
-function range(parent,title,arrValues ,css)
+function range(parent,title,arrValues )
 {
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "range");
 	x.setAttribute("min", arrValues[0]);
 	x.setAttribute("max", arrValues[1]);
 	x.setAttribute("value", arrValues[2]);
-    x.className =css;
 	
 	var t = document.createTextNode(title);
     parent.appendChild(t);
@@ -156,7 +210,7 @@ function range(parent,title,arrValues ,css)
 	objVal.innerHTML=x.value;
 
 	x.onchange=function(){
-		var event = new Event('chang');  // (*)
+		var event = new Event('change');  // (*)
 		x.dispatchEvent(event);	
 		objVal.innerHTML=x.value;
 	
@@ -165,25 +219,25 @@ function range(parent,title,arrValues ,css)
 	
 }
 /*__________________________________________________*/
-function listItem(parent,text,css)
+function listItem(parent,text)
 {
 	var x = document.createElement("LI");
-    x.className =css;
+
 	x.innerHTML=text;
 	parent.appendChild(x);
 	return x;
 }
 /*__________________________________________________*/
-function Lists(parent,arrItems,css)
+function Lists(parent,arrItems)
 {
 	var l = document.createElement("UL");
-    l.className =css;
+
 	parent.appendChild(l);
 
 	var len = arrItems.length;
 	for(i=0;i<len;i++)
-		listItem(l,arrItems[i],css);
-	
+		listItem(l,arrItems[i]);
+	return l;
 }
 /*__________________________________________________*/
 function image(parent,source,css)
@@ -195,13 +249,12 @@ function image(parent,source,css)
 	return x;
 }
 /*__________________________________________________*/
-function button(parent,title,onclickFunction,css)
+function button(parent,title,onclickFunction)
 {
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "button");
 	x.value= title;
-    x.className =css;
-	x.onclick=onclickFunction;
+    x.onclick=onclickFunction;
 	parent.appendChild(x);
 	x.onclick=function(){
 		var event = new Event('clicked');  // (*)
@@ -229,11 +282,11 @@ function link(parent,title,url,css)
 	return x;
 }
 /*__________________________________________________*/
-function label(parent,title,css)
+function label(parent,title)
 {
 	var x = document.createElement("DIV");
 	x.innerHTML= title;
-    x.className =css;
+   
 	x.style="display:inline-block; ";
 	parent.appendChild(x);
 	return x;
@@ -325,11 +378,10 @@ function simpleDatePicker(parent,title)
 		return x;
 	}
 /*__________________________________________________*/
-function table(parent,css)
+function table(parent)
 { 
 	var x = document.createElement("TABLE");
-    //x.setAttribute("id", id);
-    x.className =css;
+
 	parent.appendChild(x);
 	return x;
 }
@@ -366,6 +418,22 @@ function tableRowTextbox(tb,title)
 	var c2 = tableCell ( r);
 	textBox(c2);
 }
+//__________________________________________		
+function table_Row(tb,title,objs)
+{
+	var r = tableRow  ( tb);
+	var c1 = tableCell ( r);
+	label(c1, title);
+	var c2 = tableCell ( r);
+	for(var i=0;i<objs.length;i++)
+	{
+		switch (objs[i])
+		{
+			case "textbox":	textBox(c2,"");break;
+			default:	textBox(c2,"");break;
+		}
+	}
+}
 /*__________________________________________________*/
 function AddHtml2Body(parent,sHtml)
 {
@@ -397,3 +465,4 @@ function Clear(node)
 	}
 	return node;
 }
+
