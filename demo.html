@@ -4,7 +4,6 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Site.css" />
 		<script src="focus.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	</head>
 	<body>
 		<form>
@@ -12,12 +11,12 @@
 				window.onload = function() {
 					var doc=document.body;
 					var rbs=radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
-					radioBoxes_OnChange(rbs,onrbsChangeFunction);
-					/*
-					var onrbsChangeFunction=function(e)
-					{
+					onStateChange(rbs,
+					  function(e)
+					  {
 						debug.log(e);
-					}*/
+					  }
+					);
 					line();
 					checkBoxes(doc,"Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
 					line();
