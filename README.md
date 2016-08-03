@@ -29,7 +29,7 @@ when you use Focus.js functions,It **generates Html elements dynamically on the 
 
 For example when you write:
 ```javascript
-  radioBox("Type",["Conventinal","none-conventional"]);
+  radioBoxes(document.body,"Type",["Conventinal","none-conventional"]);
 ```
 
 it generates these code dynamically on the fly :
