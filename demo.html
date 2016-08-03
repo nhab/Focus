@@ -10,7 +10,7 @@
 			<script>
 				window.onload = function() {
 					var doc=document.body;
-					var rbs=radioBoxes(doc,"Type",["Conventinal","non-conventional"]);
+					var rbs=radioBoxes(doc,"Type : ",["Conventinal","non-conventional"]);
 					onStateChange(rbs,
 					  function(e)
 					  {
@@ -18,10 +18,10 @@
 					  }
 					);
 					line();
-					checkBoxes(doc,"Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
+					checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					line();
-					range(doc,"My Monthly  ",90,"myRange");
-					label(doc,  "My prefferation" ,"head1");
+					range(doc," Monthly  ",90,"myRange");
+					label(doc,  "prefferation" ,"head1");
 					line();
 					//button(doc,"save data into memory and wipe the page");
 					var t=table(doc);
