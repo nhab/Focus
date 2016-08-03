@@ -14,7 +14,7 @@
 					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
 				
 					line();
-					checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
+					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					line();
 					range(doc," Monthly  ",90,"myRange");
 					label(doc,  "prefferation" ,"head1");
@@ -26,9 +26,9 @@
 					var c=tableCell(r,"cell2	fd");
 					
 					//console.log(t);
-					var b=button(doc,"save data into memory and wipe the page");
+					var b=button(doc,"wipe the screen and see selected values");
 					
-					//state and itractions :					
+					//state and itractions :__________________________________					
 					onStateChange(rbs,
 					  function(e)
 					  {
@@ -38,10 +38,18 @@
 						data["a-type"]=atype;
 					  }
 					);
+					onStateChange(cbs,
+						function oncheckBoxesChange(e) {
+							var ii = checkBoxes_getState(cbs);
+							data.Features=ii;
+						}
+					);
 					b.onclick=function(){
 						Clear(doc);
 						label(doc,"a-type:"+data["a-type"]);
+						label(doc,"Features:"+data["Features"]);
 					};
+					
 				};
 			</script>
 
