@@ -33,7 +33,9 @@
 					  function(e)
 					  {
 						console.log(e);
-						data.a-type=radioBoxes_getState(rbs);
+						
+						var atype=radioBoxes_getState(rbs);
+						data.a-type=atype;
 					  }
 					);
 					b.onclick=function(){
