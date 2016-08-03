@@ -9,27 +9,37 @@
 		<form>
 			<script>
 				window.onload = function() {
+					var data={};
 					var doc=document.body;
-					var rbs=radioBoxes(doc,"Type : ",["Conventinal","non-conventional"]);
-					onStateChange(rbs,
-					  function(e)
-					  {
-						console.log(e);
-					  }
-					);
+					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
+				
 					line();
 					checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					line();
 					range(doc," Monthly  ",90,"myRange");
 					label(doc,  "prefferation" ,"head1");
 					line();
-					//button(doc,"save data into memory and wipe the page");
+					
 					var t=table(doc);
 					var r=tableRow(t);
 					var c=tableCell(r,"cell 	dfsdfd");
 					var c=tableCell(r,"cell2	fd");
 					
-					console.log(t);
+					//console.log(t);
+					var b=button(doc,"save data into memory and wipe the page");
+					
+					//state and itractions :					
+					onStateChange(rbs,
+					  function(e)
+					  {
+						console.log(e);
+						data.a-type=radioBoxes_getState(rbs);
+					  }
+					);
+					b.onclick=function(){
+						Clear(doc);
+						label(doc,"a-type:"+data.a-type);
+					};
 				};
 			</script>
 
