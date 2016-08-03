@@ -13,7 +13,8 @@ function onStateChange(obj,onChangeFunction)
 }
 /*__________________________________________________*/
  //look and feel concern functions :
- //you can also set style or css properties of each object to change its look and feel
+ //for now,you can also set style or css properties of each object to change its look and feel
+ //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
 function CssSet(obj,cssName)
 {
 	
