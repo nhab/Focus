@@ -43,7 +43,7 @@ it generates these code dynamically on the fly :
 
 ##API
 ```javascript
- //structure concern functions :
+ //(______________ structure concern functions :__________________)
  wizard(parent,fnWizPages,data) //appends a wizard element .fnWizPagesArray is an array of functions creating pages
  line    (parent)                //appends a horizontal rule(line) to the document 
  newLine (parent)                //appends a line feed (<br> element) to the parent
@@ -71,7 +71,7 @@ it generates these code dynamically on the fly :
  listItem(parent,text) // appends a 'LI' item to the list
  Lists(parent,arrItems)  // appends a 'ul' 
  
- //Intractions and states concern functions:
+ //(______________ Intractions and states concern functions: _________________)
   // onChangeFunction could have a parameter which contain every details related to the event
  onStateChange(obj,onChangeFunction)
  radioBoxes_setState(radioboxes,indx)
@@ -79,10 +79,10 @@ it generates these code dynamically on the fly :
  checkBoxes_setState(checkboxes,indxes)
  checkBoxes_getState(checkboxes)
  
- //look and feel concern functions :
+ //(______________ look and feel concern functions : _____________________)
   CssSet(obj,cssName)
   
-  //miscellaneous functions
+ //(______________ miscellaneous functions  : _____________________)
   Clear(node)                     //Clears all child nodes of the element
   AddHtml2Body(parent,sHtml)     //Appends a peice of html code to the document.body 
   Addscript2Head(scriptUrl)      //Adds a script referencing url to the Head of current HTML
