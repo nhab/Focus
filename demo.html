@@ -21,10 +21,12 @@
 					line();
 					
 					var t=table(doc);
+					t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
 					var r=tableRow(t);
-					var c=tableCell(r,"cell 	dfsdfd");
-					var c=tableCell(r,"cell2	fd");
-					
+					var c1=tableCell(r,"cell 	test1");
+					var c2=tableCell(r,"cell2	test2");
+					var c3=tableCell(r,"cell3	test3");
+					c3.style="border-style:solid; border-width: 1px;border-color:red;";
 					//console.log(t);
 					var b=button(doc,"wipe the screen and see selected values");
 					
