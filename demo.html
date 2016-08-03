@@ -16,7 +16,7 @@
 					line();
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					line();
-					range(doc," Monthly  ",90,"myRange");
+					var rng=range(doc," Monthly  ",90,"myRange");
 					label(doc,  "prefferation" ,"head1");
 					line();
 					
@@ -32,8 +32,7 @@
 					onStateChange(rbs,
 					  function(e)
 					  {
-						console.log(e);
-						
+						//console.log(e);
 						var atype=radioBoxes_getState(rbs);
 						data["a-type"]=atype;
 					  }
@@ -44,13 +43,22 @@
 							data.Features=ii;
 						}
 					);
+					
+					onStateChange(rng,
+						function onRangeChange(e){
+						data["rng"]=e.target.value;
+						}
+					);
+					
 					b.onclick=function(){
 						Clear(doc);
 						label(doc,"a-type:"+data["a-type"]);
 						newLine(doc);
 						label(doc,"Features:"+data["Features"]);
+						newLine(doc);
+						label(doc,"range:"+data["rng"]);
 					};
-					
+				
 				};
 			</script>
 
