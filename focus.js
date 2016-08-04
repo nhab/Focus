@@ -294,37 +294,36 @@ function label(parent,title)
 	return x;
 }
 /*__________________________________________________*/
-function checkBox(parent,title,css)
+function checkBox(parent,title)
 {
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "checkbox");
-	
-    x.className =css;
+
 	parent.appendChild(x);
 	var t = document.createTextNode(title);
     document.body.appendChild(t);
 	return x;
 }
 /*__________________________________________________*/
-function textBox(parent,title,val,css)
+function textBox(parent,title,val)
 {
 	if(title!="" && title !=undefined)
 	{
 		var t = document.createTextNode(title);
-    	parent.appendChild(t);
+    		parent.appendChild(t);
 	}
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "Text");
 	
-	
-    x.className =css;
 	if(val!="" && val !=undefined)
 		x.value=val;
-    parent.appendChild(x);
+	
+	 parent.appendChild(x);
+	 
 	return x;
 }
 /*__________________________________________________*/
-function dropDown(parent,title,arrItems,css)
+function dropDown(parent,title,arrItems)
 {
 	var x = document.createElement("SELECT");
 	var len=arrItems.length;
