@@ -14,7 +14,7 @@
 					var doc=document.body;
 					var data={};
 					
-					textBox(doc,"name");
+					var txtName=textBox(doc,"name");
 					newLine();
 					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
 				
@@ -58,8 +58,10 @@
 					);
 					
 					b.onclick=function(){
+						data["a-name"]=txtName.value;
 						Clear(doc);
-						label(doc,"a-type:"+data["a-type"]);
+						label(doc,"name:"+data["a-name"]);
+						label(doc,"type:"+data["a-type"]);
 						newLine(doc);
 						label(doc,"Features:"+data["Features"]);
 						newLine(doc);
