@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="Site.css" />
+		<script src="focus.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<form>
+			<script>
+				window.onload = function() {
+					var doc=document.body;
+					var data={};
+					
+					textBox(doc,"name");
+					newline();
+					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
+				
+					line();
+					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
+					line();
+					var rng=range(doc," Monthly  ",90,"myRange");
+					label(doc,  "prefferation" ,"head1");
+					line();
+					
+					var t=table(doc);
+					t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
+					var r=tableRow(t);
+					var c1=tableCell(r,"cell 	test1");
+					var c2=tableCell(r,"cell2	test2");
+					var c3=tableCell(r,"cell3	test3");
+					c3.style="border-style:solid; border-width: 1px;border-color:red;";
+					//console.log(t);
+					var b=button(doc,"wipe the screen and see selected values");
+					
+					//state and itractions :__________________________________					
+					onStateChange(rbs,
+					  function(e)
+					  {
+						//console.log(e);
+						var atype=radioBoxes_getState(rbs);
+						data["a-type"]=atype;
+					  }
+					);
+					onStateChange(cbs,
+						function oncheckBoxesChange(e) {
+							var ii = checkBoxes_getState(cbs);
+							data.Features=ii;
+						}
+					);
+					
+					onStateChange(rng,
+						function onRangeChange(e){
+						data["rng"]=e.target.value;
+						}
+					);
+					
+					b.onclick=function(){
+						Clear(doc);
+						label(doc,"a-type:"+data["a-type"]);
+						newLine(doc);
+						label(doc,"Features:"+data["Features"]);
+						newLine(doc);
+						label(doc,"range:"+data["rng"]);
+					};
+					
+				};
+			</script>
+		</form>
+	</body>
+</html>
