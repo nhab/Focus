@@ -12,20 +12,60 @@
 			<script>
 				window.onload = function() {
 					var doc=document.body;
+					var data={};
+					
 					textBox(doc,"name");
 					newline();
-					radioBoxes(doc,"","Type",["Conventinal","non-conventional"]);
+					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
+				
 					line();
-					checkBoxes(doc,"","Features I would like to have  : ",["cashback","Lifestyle","Travel"]);
-					newline();
-					range(doc,"My Monthly  ",90,"myRange");
-					label(doc,  "My prefferation" ,"head1");
+					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					line();
+					var rng=range(doc," Monthly  ",90,"myRange");
+					label(doc,  "prefferation" ,"head1");
+					line();
+					
 					var t=table(doc);
+					t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
 					var r=tableRow(t);
-					var c=tableCell(r,"cell 	dfsdfd");
-					var c=tableCell(r,"cell2	fd");
-					console.log(t);
+					var c1=tableCell(r,"cell 	test1");
+					var c2=tableCell(r,"cell2	test2");
+					var c3=tableCell(r,"cell3	test3");
+					c3.style="border-style:solid; border-width: 1px;border-color:red;";
+					//console.log(t);
+					var b=button(doc,"wipe the screen and see selected values");
+					
+					//state and itractions :__________________________________					
+					onStateChange(rbs,
+					  function(e)
+					  {
+						//console.log(e);
+						var atype=radioBoxes_getState(rbs);
+						data["a-type"]=atype;
+					  }
+					);
+					onStateChange(cbs,
+						function oncheckBoxesChange(e) {
+							var ii = checkBoxes_getState(cbs);
+							data.Features=ii;
+						}
+					);
+					
+					onStateChange(rng,
+						function onRangeChange(e){
+						data["rng"]=e.target.value;
+						}
+					);
+					
+					b.onclick=function(){
+						Clear(doc);
+						label(doc,"a-type:"+data["a-type"]);
+						newLine(doc);
+						label(doc,"Features:"+data["Features"]);
+						newLine(doc);
+						label(doc,"range:"+data["rng"]);
+					};
+					
 				};
 			</script>
 		</form>
