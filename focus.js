@@ -1,10 +1,6 @@
-function a()//for testing purposes :)
-{
-	alert("Test");
-}
 var fnWizPages=[];//an array of functions that create pages
 
-//Intraction concern functions:
+//(__________________________________ Intraction concern functions: _____________________________________)
 /*__________________________________________________*/
 // onChangeFunction could have a parameter which contain every details related to the event
 function onStateChange(obj,onChangeFunction)
@@ -12,7 +8,7 @@ function onStateChange(obj,onChangeFunction)
 	obj.addEventListener('change',onChangeFunction,false);
 }
 /*__________________________________________________*/
- //look and feel concern functions :
+ //(__________________________________ look and feel concern functions : _________________________________)
  //for now,you can also set style or css properties of each object to change its look and feel
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
 function CssSet(obj,cssName)
@@ -20,7 +16,7 @@ function CssSet(obj,cssName)
 	
 	obj.className =cssName;
 }
- //structure concern functions :
+ //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
 {
@@ -62,7 +58,6 @@ function wizard1(parent,i,fnWizPages,data)
 	
 	return data;
 }
-
 /*__________________________________________________*/
 function line(parent)
 {
@@ -79,8 +74,7 @@ function newLine(parent)
 	parent.appendChild(x);
 	return x;
 }
- 
-/*__________________________________________________*/
+ /*__________________________________________________*/
 function radioBoxes(parent,title,arrItems,name)
 {
 	var x = document.createElement("DIV");
@@ -121,7 +115,6 @@ function radioBoxes(parent,title,arrItems,name)
 	
 	return x;
 }
-
 /*__________________________________________________*/
 function radioBoxes_setState(radioboxes,indx)
 {
@@ -140,7 +133,6 @@ function radioBoxes_getState(radioboxes)
 		   return radioboxes.children[i].id.substring(2);
 	return undefined;
 }
-
 /*__________________________________________________*/
 function checkBoxes(parent,title,arrItems)
 {
@@ -193,7 +185,6 @@ function checkBoxes_getState(checkboxes)
 	return ret;
 }
 /*__________________________________________________*/
-
 var objVal;
 function range(parent,title,arrValues )
 {
@@ -435,6 +426,7 @@ function table_Row(tb,title,objs)
 		}
 	}
 }
+(__________________________________  miscellaneous/General __________________________________________)
 /*__________________________________________________*/
 function AddHtml2Body(parent,sHtml)
 {
@@ -467,3 +459,7 @@ function Clear(node)
 	return node;
 }
 
+function a()//for testing purposes :)
+{
+	alert("Test");
+}
