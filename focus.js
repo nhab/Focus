@@ -258,20 +258,28 @@ function button(parent,title,onclickFunction)
 	return x;
 }
 /*__________________________________________________*/
-function div(parent,css)
+function div(parent)
 {
 	var x = document.createElement("div");
-    x.className =css;
+    
 	parent.appendChild(x);
 	return x;
 }
 /*__________________________________________________*/
-function link(parent,title,url,css)
+function container(parent)
+{
+	var x = document.createElement("div");
+    	
+	parent.appendChild(x);
+	return x;
+}
+/*__________________________________________________*/
+function link(parent,title,url)
 {
 	var x = document.createElement("A");
 	x.setAttribute("href", url);
 	x.innerHTML=title;
-    x.className =css;
+    
 	parent.appendChild(x);
     
 	return x;
