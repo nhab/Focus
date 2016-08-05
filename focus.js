@@ -19,12 +19,36 @@ function cssSet(obj,cssName)
 	obj.className =cssName;
 }
 /*__________________________________________________*/
-function border(obj,width)
+function border(obj,width,color)
 {
-	var swidth;
+	var swidth="1",sColor="black";
+	
 	if(width!=undefined)
 		swidth=width;
-	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;";
+		
+	if(color !=undefined)
+		sColor=color;
+		
+	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
+}
+/*__________________________________________________*/
+function dimention(obj,width,height)
+{
+	obj.width=width;
+	obj.height=height;
+}
+/*__________________________________________________*/
+function margin(obj,top,bottom,right,left)
+{
+	obj.margin-top=top;
+	obj.margin-bottom=bottom;
+	obj.margin-right=right;
+	obj.margin-left=left;
+}
+/*__________________________________________________*/
+function align(obj,vertical,horizontal)
+{
+	obj.vertical-align=vertical;
 }
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
@@ -277,7 +301,7 @@ function div(parent)
 function container(parent)
 {
 	var x = document.createElement("div");
-    	
+    	x.style=x.style+"display:inline-block";
 	parent.appendChild(x);
 	return x;
 }
