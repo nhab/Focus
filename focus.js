@@ -40,10 +40,10 @@ function dimention(obj,width,height)
 /*__________________________________________________*/
 function margin(obj,top,bottom,right,left)
 {
-	obj.margin-top=top;
-	obj.margin-bottom=bottom;
-	obj.margin-right=right;
-	obj.margin-left=left;
+	obj.style =obj.style+";margin-top:"+  top;
+	obj.style =obj.style+";.margin-bottom:"+ bottom;
+	obj.style =obj.style+";.margin-right:"+ right;
+	obj.style =obj.style+";.margin-left:"+ left;
 }
 /*__________________________________________________*/
 function align(obj,vertical,horizontal)
