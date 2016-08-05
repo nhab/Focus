@@ -13,7 +13,7 @@ function onStateChange(obj,onChangeFunction)
  //Positions,Dimentions, Colors, Fonts, Images and Animations. 
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
  
-function CssSet(obj,cssName)
+function cssSet(obj,cssName)
 {
 	
 	obj.className =cssName;
