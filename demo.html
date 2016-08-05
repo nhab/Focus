@@ -13,7 +13,9 @@
 		<form>
 			<script>
 				window.onload = function() {
-					var doc=document.body;
+					var bdy=document.body;
+					doc=container(bdy);
+					doc.style="border-style:solid;border-width:1px;"
 					var data={};
 					
 					var txtName=textBox(doc,"name");
