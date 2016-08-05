@@ -18,6 +18,14 @@ function cssSet(obj,cssName)
 	
 	obj.className =cssName;
 }
+/*__________________________________________________*/
+function border(obj,width)
+{
+	var swidth;
+	if(width!=undefined)
+		swidth=width;
+	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;";
+}
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
