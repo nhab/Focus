@@ -28,6 +28,7 @@ function border(obj,width,color)
 		
 	if(color !=undefined)
 		sColor=color;
+	debugger;
 	obj.style.border-style="solid;";
 	obj.style.border-width=width+"px";
 	obj.style.border-color=color;
