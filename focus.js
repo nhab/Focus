@@ -28,8 +28,10 @@ function border(obj,width,color)
 		
 	if(color !=undefined)
 		sColor=color;
-		
-	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
+	obj.style.border-style="solid;";
+	obj.style.border-width=width+"px";
+	obj.style.border-color=color;
+//	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
 }
 /*__________________________________________________*/
 function dimention(obj,width,height)
