@@ -63,10 +63,12 @@ function AlignHCenter(obj)
 	obj.style.marginLeft ="auto";
 	obj.style.marginRight ="auto";;
 }
-
+/*__________________________________________________*/
 function AlignVCenter(obj)
 {
-	obj.style =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
+	
+	obj.style.marginTop="auto";// =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
+	obj.style.marginBottom="auto";
 }
 function align(obj,vertical,horizontal)
 {
