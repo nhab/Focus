@@ -20,15 +20,15 @@
 					var data={};
 					
 					var txtName=textBox(doc,"name");
-					newLine();
+					newLine(doc);
 					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
 				
-					line();
+					line(doc);
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
-					newLine();
+					newLine(doc);
 					var rng=range(doc," Monthly  ",90,"myRange");
 					label(doc,  "prefferation" ,"head1");
-					line();
+					line(doc);
 					
 					var t=table(doc);
 					t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
@@ -41,7 +41,7 @@
 					var b=button(doc,"wipe the screen and see selected values");
 					//look and feel :__________________________________
 					cssSet(b,"waves-effect waves-light btn-large");
-					debugger;
+					//debugger;
 					dimention(doc,"70%");
 					border(doc);
 					AlignHCenter(doc);
