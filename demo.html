@@ -13,13 +13,10 @@
 		<form>
 			<script>
 				window.onload = function() {
+					//____________ elements _______________________________________
 					var bdy=document.body;
 					doc=container(bdy);
-					debugger;
-					dimention(doc,"70%");
-					border(doc);
-					AlignHCenter(doc);
-					padding(doc,40);
+					
 					var data={};
 					
 					var txtName=textBox(doc,"name");
@@ -42,8 +39,13 @@
 					c3.style="border-style:solid; border-width: 1px;border-color:red;";
 					//console.log(t);
 					var b=button(doc,"wipe the screen and see selected values");
-					
+					//look and feel :__________________________________
 					cssSet(b,"waves-effect waves-light btn-large");
+					debugger;
+					dimention(doc,"70%");
+					border(doc);
+					AlignHCenter(doc);
+					padding(doc,40);
 					//state and itractions :__________________________________					
 					onStateChange(rbs,
 					  function(e)
