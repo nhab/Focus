@@ -12,9 +12,9 @@ function onStateChange(obj,onChangeFunction)
  // you can also set style or css properties of each object to change its look and feel:
  //Positions,Dimentions, Colors, Fonts, Images and Animations. 
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
-function setAttribute(obj,atrib,val)
+function setStyleAttribute(obj,atrib,val)
 {
-	obj.setAttribute(atrib,val);
+	obj.style.setAttribute(atrib,val);
 }
 
 function cssSet(obj,cssName)
