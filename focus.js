@@ -69,8 +69,8 @@ function AlignVCenter(obj)
 	
 	obj.style.position="relative";// =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
 	obj.style.top="50%";
-	obj.style.webkit-transform="translateY(-50%)";
-	obj.style.ms-transform= "translateY(-50%)";
+	obj.style.webkitTransform="translateY(-50%)";
+	obj.style.msTransform= "translateY(-50%)";
   	obj.style.transform="translateY(-50%)";
 }
 function align(obj,vertical,horizontal)
