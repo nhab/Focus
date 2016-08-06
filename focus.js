@@ -53,8 +53,8 @@ function margin(obj,top,bottom,right,left)
 	if(top!=undefined  && right==undefined && left==undefined)
 	{
 		if(bottom==undefined)	bottom =  top;
-		if(right==undefined)obj.style.margin.right =  top;
-		if(left==undefined)obj.style.margin.left =  top;	
+		if(right==undefined) right =  top;
+		if(left==undefined) left =  top;	
 	}
 	obj.style.margin.top =  top;
 	obj.style.margin.bottom = bottom;
