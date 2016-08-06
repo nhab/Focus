@@ -54,12 +54,13 @@ function margin(obj,top,bottom,right,left)
 	*/
 }
 /*__________________________________________________*/
-function centerHoriz(obj)
+function AlignHCenter(obj)
 {
-	obj.style =obj.style+";margin: 0 auto;";
+	obj.style.marginLeft ="auto";
+	obj.style.marginRight ="auto";;
 }
 
-function centerVertical(obj)
+function AlignVCenter(obj)
 {
 	obj.style =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
 }
