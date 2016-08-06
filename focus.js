@@ -28,10 +28,11 @@ function border(obj,width,color)
 		
 	if(color !=undefined)
 		sColor=color;
-	debugger;
+	/*
 	obj.style.border-style="solid;";
 	obj.style.border-width=width+"px";
 	obj.style.border-color=color;
+	*/
 //	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
 }
 /*__________________________________________________*/
