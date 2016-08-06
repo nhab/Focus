@@ -55,7 +55,7 @@ function margin(obj,top,bottom,right,left)
 /*__________________________________________________*/
 function padding(obj,val)
 {
-	obj.style.padding = val+"px "+val+"px "+val+" px "+val+""px";
+	obj.style.padding = val+"px "+val+"px "+val+"px "+val+" px";
 }
 /*__________________________________________________*/
 function AlignHCenter(obj)
