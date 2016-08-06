@@ -533,6 +533,10 @@ function Clear(node)
 	return node;
 }
 
+function setAttribute(obj,atrib,val)
+{
+	obj.setAttribute(atrib,val);
+}
 function a()//for testing purposes :)
 {
 	alert("Test");
