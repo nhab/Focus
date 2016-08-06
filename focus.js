@@ -48,9 +48,19 @@ function margin(obj,top,bottom,right,left)
 	*/
 }
 /*__________________________________________________*/
+function centerHoriz(obj)
+{
+	obj.style =obj.style+";margin: 0 auto;";
+}
+
+function centerVertical(obj)
+{
+	obj.style =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
+}
 function align(obj,vertical,horizontal)
 {
-	obj.vertical-align=vertical;
+	obj.style =obj.style+";vertical-align:"+vertical+";";
+	obj.style =obj.style+";vertical-align:"+vertical+";";
 }
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
