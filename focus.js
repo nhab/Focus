@@ -34,10 +34,10 @@ function border(obj,width,color)
 /*__________________________________________________*/
 function dimention(obj,width,height)
 {
-//	obj.width=width;
-//	obj.height=height;
-	obj.style =obj.style+";width:"+width;
-	obj.style =obj.style+";height:"+height+";";
+	obj.style.width=width;
+	obj.style.height=height;
+	//obj.style =obj.style+";width:"+width;
+	//obj.style =obj.style+";height:"+height+";";
 }
 /*__________________________________________________*/
 function margin(obj,top,bottom,right,left)
