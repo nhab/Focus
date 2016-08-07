@@ -60,7 +60,8 @@ function styleButton(obj)
 	s=s+"	background: #8db1c7;";
 	s=s+"	text-decoration: none;";
 	s=s+"}";
-	styleAttribute(obj,atrib,val);
+	styleAttribute(obj,"style",s);
+	styleAttribute(obj,"css","button");
 }
 /*__________________________________________________*/
 function dimention(obj,width,height)
