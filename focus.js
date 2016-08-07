@@ -5,7 +5,7 @@ var fnWizPages=[];//an array of functions that create pages
 // onChangeFunction could have a parameter which contain every details related to the event
 function onStateChange(obj,onChangeFunction)
 {
-	obj.addEventListener('change',onChangeFunction,false);
+	obj.addEventListener('Intract',onChangeFunction,false);
 }
 /*__________________________________________________*/
  //(__________________________________ look and feel concern functions : _________________________________)
@@ -301,11 +301,14 @@ function range(parent,title,arrValues )
 	objVal = label(parent,"income");
 	objVal.innerHTML=x.value;
 
-	x.onchange=function(){
-		var event = new Event('change');  // (*)
+	x.onchange=function(e){
+		var event = new Event('Intract');  // (*)
+		
+		console.log(e.target);
 		x.dispatchEvent(event);	
-		objVal.innerHTML=x.value;
-	
+		/*if(e.target.innerHTML!=x.value)
+			objVal.innerHTML=x.value;
+	*/
 	};
 	return x;
 	
@@ -387,7 +390,7 @@ function label(parent,title)
 	var x = document.createElement("DIV");
 	x.innerHTML= title;
    
-	x.style="display:inline-block; ";
+	x.style="display:inline-block;";
 	parent.appendChild(x);
 	return x;
 }
@@ -407,12 +410,20 @@ function textBox(parent,title,val)
 {
 	if(title!="" && title !=undefined)
 	{
-		var t = document.createTextNode(title);
-    		parent.appendChild(t);
-	}
-	var dvSpc=document.createElement("DIV");
-	dvSpc.innerHTML="&nbsp";
+		/*var dvSpc=document.createElement("DIV");
+	dvSpc.style.innerHTML="&nbsp";
+	//dvSpc.style.display="inline";
+	debugger;
 	parent.appendChild(dvSpc);
+	
+		var t = document.createTextNode(title);
+		console.debug(t);
+		 t.style.marginRight="3px";
+    		parent.appendChild(t);
+			*/
+			var l=label(parent,title);
+			l.style.marginRight="10px";
+	}
 	
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "Text");
