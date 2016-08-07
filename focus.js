@@ -307,8 +307,8 @@ function range(parent,title,arrValues )
 	
 		x.dispatchEvent(event);	
 		/*if(e.target.innerHTML!=x.value)	*/
-			console.log(e);
-			objVal.innerHTML=x.value;
+		//	console.log(e);
+		objVal.innerHTML=x.value;
 
 	};
 	return x;
