@@ -12,12 +12,12 @@ function onStateChange(obj,onChangeFunction)
  // you can also set style or css properties of each object to change its look and feel:
  //Positions,Dimentions, Colors, Fonts, Images and Animations. 
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
-function setStyleAttribute(obj,atrib,val)
+function styleAttribute(obj,atrib,val)
 {
 	obj.style.setAttribute(atrib,val);
 }
 
-function cssSet(obj,cssName)
+function css (obj,cssName)
 {
 	
 	obj.className =cssName;
@@ -38,6 +38,29 @@ function border(obj,width,color)
 	obj.style.borderColor=color;
 	
 //	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
+}
+/*__________________________________________________*/
+function styleButton(obj)
+{
+	var s=".button {";
+	s=s+"background-color: #4BCD37;";
+	s=s+"border: 3px solid;";
+	s=s+"border-color: white;";
+	s=s+"border-radius: 20px;";
+	s=s+"padding: 15px 32px;";
+	s=s+"text-align: center;";
+	s=s+"text-decoration: none;";
+	s=s+"display: inline-block;";
+	s=s+"font-size: 16px;";
+	s=s+"margin: 4px 2px;";
+	s=s+"cursor: pointer;";
+	s=s+"box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);";
+	s=s+"}";
+	s=s+".button:hover {";
+	s=s+"	background: #8db1c7;";
+	s=s+"	text-decoration: none;";
+	s=s+"}";
+	styleAttribute(obj,atrib,val);
 }
 /*__________________________________________________*/
 function dimention(obj,width,height)
