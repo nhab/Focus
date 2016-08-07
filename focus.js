@@ -410,6 +410,9 @@ function textBox(parent,title,val)
 		var t = document.createTextNode(title);
     		parent.appendChild(t);
 	}
+	var dvSpc=document.createElement("DIV");
+	dvSpc.innerHTML="&nbsp";
+	 parent.appendChild(dvSpcx);
 	var x = document.createElement("INPUT");
 	x.setAttribute("type", "Text");
 	
