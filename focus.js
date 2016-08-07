@@ -40,7 +40,7 @@ function styleButton(obj)
 {
 	obj.style.backgroundColor= hexToRgb("#4BCD37");
 	obj.style.borderSize=3;
-	obj.style.borderColor="white";
+	obj.style.borderColor="white" ;
 	/*
 	var s=".button {";
 	s=s+"background-color: #4BCD37;";
