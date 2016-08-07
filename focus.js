@@ -38,6 +38,10 @@ function border(obj,width,color)
 /*__________________________________________________*/
 function styleButton(obj)
 {
+	obj.style.backgroundColor= #4BCD37;
+	obj.style.borderSize=3px;
+	obj.style.borderColor=white;
+	/*
 	var s=".button {";
 	s=s+"background-color: #4BCD37;";
 	s=s+"border: 3px solid;";
@@ -58,6 +62,7 @@ function styleButton(obj)
 	s=s+"}";
 	styleAttribute(obj,"style",s);
 	styleAttribute(obj,"css","button");
+	*/
 }
 /*__________________________________________________*/
 function dimention(obj,width,height)
