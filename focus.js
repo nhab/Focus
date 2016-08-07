@@ -14,6 +14,8 @@ function onStateChange(obj,onChangeFunction)
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
 function styleAttribute(obj,atrib,val)
 {
+	console.debug(obj);
+	debugger;
 	obj.style.setAttribute(atrib,val);
 }
 
