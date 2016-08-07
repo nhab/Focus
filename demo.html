@@ -8,7 +8,8 @@
 		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
-		<script src="https://rawgit.com/nhab/Focus/master/focus.js"></script>
+		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
 
 	</head>
 	<body>
@@ -31,19 +32,13 @@
 					var rng=range(doc," Monthly  ",90,"myRange");
 					label(doc,  "prefferation" ,"head1");
 					line(doc);
+					label(doc,"range:"+data["rng"]);
 					
-					var t=table(doc);
-					
-					var r=tableRow(t);
-					var c1=tableCell(r,"cell 	test1");
-					var c2=tableCell(r,"cell2	test2");
-					var c3=tableCell(r,"cell3	test3");
 					
 					//console.log(t);
 					var b=button(doc,"wipe the screen and see selected values");
 					//look and feel :__________________________________
-					t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
-					c3.style="border-style:solid; border-width: 1px;border-color:red;";
+					
 					styleButton(b);
 					//cssSet(b,"waves-effect waves-light btn-large");
 					//
@@ -79,13 +74,25 @@
 					b.onclick=function(){
 						data["a-name"]=txtName.value;
 						Clear(doc);
-						label(doc,"name:"+data["a-name"]);
-						newLine(doc);
-						label(doc,"type:"+data["a-type"]);
-						newLine(doc);
-						label(doc,"Features:"+data["Features"]);
-						newLine(doc);
-						label(doc,"range:"+data["rng"]);
+						var t=table(doc);
+						var r=tableRow(t);
+						var c1=tableCell(r,"name:");
+						var c2=tableCell(r,data["a-name"]);
+						
+						var r=tableRow(t);
+						var c3=tableCell(r,"type");
+						var c4=tableCell(r,data["a-type"]);
+
+						var r=tableRow(t);
+						var c3=tableCell(r,"Features");
+						var c4=tableCell(r,data["Features"]);
+
+						
+						
+					
+						t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
+					c3.style="border-style:solid; border-width: 1px;border-color:red;";
+						
 					};
 					
 				};
