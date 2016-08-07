@@ -39,7 +39,7 @@ function border(obj,width,color)
 function styleButton(obj)
 {
 	obj.style.backgroundColor= hexToRgb("#4BCD37");
-	obj.style.borderSize=3px;
+	obj.style.borderSize=3;
 	obj.style.borderColor=white;
 	/*
 	var s=".button {";
