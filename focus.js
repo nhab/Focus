@@ -304,11 +304,12 @@ function range(parent,title,arrValues )
 	x.onchange=function(e){
 		var event = new Event('Intract');  // (*)
 		
-		console.log(e.target);
+	
 		x.dispatchEvent(event);	
-		/*if(e.target.innerHTML!=x.value)
+		/*if(e.target.innerHTML!=x.value)	*/
+			console.log(e);
 			objVal.innerHTML=x.value;
-	*/
+
 	};
 	return x;
 	
