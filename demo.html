@@ -9,8 +9,8 @@
 		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
-		<script src="https://rawgit.com/nhab/Focus/master/focus.js"></script>
-		<!--script src="focus.js"></script-->
+		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
 
 	</head>
 	<body>
@@ -27,14 +27,14 @@
 					newLine(doc);
 					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
 				
-					line(doc);
+					
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					newLine(doc);
 					var rng=range(doc," Range of it  ",90,"myRange");
 					label(doc,  " prefferation" ,"head1");
 					line(doc);
-					label(doc,"range:"+data["rng"]);
-					
+					var lblRng=label(doc,"range:"+data["rng"]);
+					line(doc);
 					var b=button(doc,"wipe the screen and see selected values");
 
 					//look and feel :__________________________________
@@ -53,12 +53,11 @@
 					AlignVCenter(doc);
 					padding(doc,40);
 					margin(txtName,10);
-					//state and itractions :__________________________________					
+					//state and itractions :__________________________________	
+                    data["rng"]=0;				
 					onStateChange(rbs,
 					  function(e)
 					  {
-						//console.log(e);
-                        
 						var atype=radioBoxes_getValue(rbs);
 						data["a-type"]=atype;
 					  }
@@ -72,7 +71,9 @@
 					
 					onStateChange(rng,
 						function onRangeChange(e){
-						data["rng"]=e.target.value;
+                        
+						    data["rng"]=e.target.value;
+                            label_setValue(lblRng,data["rng"]);
 						}
 					);
 					
@@ -91,6 +92,10 @@
 						var r=tableRow(t);
 						var c3=tableCell(r,"Features");
 						var c4=tableCell(r,data["Features"]);
+					
+                    	var r=tableRow(t);
+						var c3=tableCell(r,"Rang");
+						var c4=tableCell(r,data["rng"]);
 					
 						t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
 					c3.style="border-style:solid; border-width: 1px;border-color:red;";
