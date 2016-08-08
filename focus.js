@@ -1,11 +1,75 @@
 var fnWizPages=[];//an array of functions that create pages
 
 //(__________________________________ Intraction concern functions: _____________________________________)
+    //(_Evnts)__________________________________________________________
 /*__________________________________________________*/
 // onChangeFunction could have a parameter which contain every details related to the event
 function onStateChange(obj,onChangeFunction)
 {
 	obj.addEventListener('Intract',onChangeFunction,false);
+}
+/*__________________________________________________*/
+function hoverStyle(obj,style)
+{
+    
+    var color1=obj.style.backgroundColor;
+    var color2=style.backgroundColor;
+    obj.onmouseover=function(){
+        
+        obj.style.backgroundColor=color2;
+    };
+
+    obj.onmouseleave=function(){
+        obj.style.backgroundColor=color1;
+    };
+}
+    //(_Data)____________________________________________________________
+/*__________________________________________________*/
+function radioBoxes_setValue(radioboxes,indx)
+{
+	var len=radioboxes.children.length;
+	var id="rb"+indx;
+	for(i=0;i<len;i++)
+		if(radioboxes.children[i].id==id)
+			radioboxes.children[i].checked=true;
+}
+/*__________________________________________________*/
+function radioBoxes_getValue(radioboxes)
+{
+	var len=radioboxes.children.length;
+	for(i=0;i<len;i++)
+		if(radioboxes.children[i].checked)
+		   return radioboxes.children[i].id.substring(2);
+	return undefined;
+}
+/*__________________________________________________*/
+function label_setValue(objLabel,title)
+{
+	objLabel.innerHTML= title;
+}
+/*__________________________________________________*/
+function checkBoxes_setValue(checkboxes,indxes)
+{
+	var len=checkboxes.children.length;
+	
+	var j=0;
+	for(i=0;i<len;i++)
+		if(checkboxes.children[i].id=="cb"+indxes[j])
+		{
+			checkboxes.children[i].checked=true;
+			j++;
+		}
+}
+/*__________________________________________________*/
+function checkBoxes_getValue(checkboxes)
+{
+	
+	var len=checkboxes.children.length;
+	var ret=[];
+	for(i=0;i<len;i++)
+		if(checkboxes.children[i].checked)
+		    ret.push( checkboxes.children[i].id.substring(2));
+	return ret;
 }
 /*__________________________________________________*/
  //(__________________________________ look and feel concern functions : _________________________________)
@@ -36,13 +100,20 @@ function border(obj,width,color)
 //	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
 }
 /*__________________________________________________*/
-function styleButton(obj)
+function styleButton(objBtn)
 {
-	obj.style.backgroundColor= hexToRgb("#4BCD37");
-	obj.style.borderSize=3;
-	obj.style.borderStyle="solid";
-	obj.style.borderColor="white" ;
-	obj.style.borderRadius=20;
+    
+	objBtn.style.backgroundColor="#4BCD37";
+	objBtn.style.borderSize=3;
+	objBtn.style.borderStyle="solid";
+	objBtn.style.borderColor="white" ;
+	objBtn.style.borderRadius=20;
+    
+    var st = document.createElement("STYLE");
+    st = objectClone( objBtn.style) ; 
+    st.backgroundColor="#8db1c7";
+    
+    hoverStyle( objBtn , st );
 	/*
 	var s=".button {";
 	s=s+"background-color: #4BCD37;";
@@ -65,6 +136,8 @@ function styleButton(obj)
 	styleAttribute(obj,"style",s);
 	styleAttribute(obj,"css","button");
 	*/
+       
+    return objBtn.style;
 }
 /*__________________________________________________*/
 function dimention(obj,width,height)
@@ -214,24 +287,7 @@ function radioBoxes(parent,title,arrItems,name)
 	
 	return x;
 }
-/*__________________________________________________*/
-function radioBoxes_setState(radioboxes,indx)
-{
-	var len=radioboxes.children.length;
-	var id="rb"+indx;
-	for(i=0;i<len;i++)
-		if(radioboxes.children[i].id==id)
-			radioboxes.children[i].checked=true;
-}
-/*__________________________________________________*/
-function radioBoxes_getState(radioboxes)
-{
-	var len=radioboxes.children.length;
-	for(i=0;i<len;i++)
-		if(radioboxes.children[i].checked)
-		   return radioboxes.children[i].id.substring(2);
-	return undefined;
-}
+
 /*__________________________________________________*/
 function checkBoxes(parent,title,arrItems)
 {
@@ -259,30 +315,7 @@ function checkBoxes(parent,title,arrItems)
 	
 	return x;
 }
-/*__________________________________________________*/
-function checkBoxes_setState(checkboxes,indxes)
-{
-	var len=checkboxes.children.length;
-	
-	var j=0;
-	for(i=0;i<len;i++)
-		if(checkboxes.children[i].id=="cb"+indxes[j])
-		{
-			checkboxes.children[i].checked=true;
-			j++;
-		}
-}
-/*__________________________________________________*/
-function checkBoxes_getState(checkboxes)
-{
-	
-	var len=checkboxes.children.length;
-	var ret=[];
-	for(i=0;i<len;i++)
-		if(checkboxes.children[i].checked)
-		    ret.push( checkboxes.children[i].id.substring(2));
-	return ret;
-}
+
 /*__________________________________________________*/
 var objVal;
 function range(parent,title,arrValues )
@@ -298,8 +331,8 @@ function range(parent,title,arrValues )
 	
 	parent.appendChild(x);
 	
-	objVal = label(parent,"income");
-	objVal.innerHTML=x.value;
+	objVal = label(parent,x.value);
+	//objVal.innerHTML=x.value;
 
 	x.onchange=function(e){
 		var event = new Event('Intract');  // (*)
@@ -572,14 +605,26 @@ function Addscript2Head(scriptUrl)
 
 }
 /*__________________________________________________*/
+ function objectClone(obj)
+ {
+    var clone = {};
+    for(var i in obj) {
+        if(typeof(obj[i])=="object" && obj[i] != null)
+            clone[i] = cloneObject(obj[i]);
+        else
+            clone[i] = obj[i];
+    }
+    return clone;
+ }
+/*
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}
+    return result ? rgb(
+         parseInt(result[1], 16), //r
+         parseInt(result[2], 16), //g
+         parseInt(result[3], 16)  //b
+    ) : null;
+}*/
 /*__________________________________________________*/
 function Clear(node)
 {
