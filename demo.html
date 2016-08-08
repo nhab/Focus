@@ -17,6 +17,8 @@
 		<form>
 			<script>
 				window.onload = function() {
+					// Initial states data
+					data["rng"]=10;	
 					//____________ elements _______________________________________
 					var bdy=document.body;
 					doc=container(bdy);
@@ -25,23 +27,25 @@
 					
 					var txtName=textBox(doc,"name");
 					newLine(doc);
-					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
-				
 					
+					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					newLine(doc);
+					
 					var rng=range(doc," Range of it  ",90,"myRange");
 					label(doc,  " prefferation" ,"head1");
 					line(doc);
+					
 					var lblRng=label(doc,"range:"+data["rng"]);
 					line(doc);
+					
 					var b=button(doc,"wipe the screen and see selected values");
 
 					//look and feel :__________________________________
-                    boxShadow(txtName);
+                    			boxShadow(txtName);
 					
                                        
-                    setFunctionBulk(margin,[txtName,rbs,cbs],10);
+                    			setFunctionBulk(margin,[txtName,rbs,cbs],10);
 					styleButton(b);
                  
 					//cssSet(b,"waves-effect waves-light btn-large");
@@ -54,7 +58,7 @@
 					padding(doc,40);
 					margin(txtName,10);
 					//state and itractions :__________________________________	
-                    data["rng"]=0;				
+                    					
 					onStateChange(rbs,
 					  function(e)
 					  {
@@ -71,9 +75,8 @@
 					
 					onStateChange(rng,
 						function onRangeChange(e){
-                        
-						    data["rng"]=e.target.value;
-                            set_Label(lblRng,data["rng"]);
+                        				data["rng"]=e.target.value;
+                            				set_Label(lblRng,data["rng"]);
 						}
 					);
 					
@@ -93,7 +96,7 @@
 						var c3=tableCell(r,"Features");
 						var c4=tableCell(r,data["Features"]);
 					
-                    	var r=tableRow(t);
+                    				var r=tableRow(t);
 						var c3=tableCell(r,"Rang");
 						var c4=tableCell(r,data["rng"]);
 					
