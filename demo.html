@@ -9,8 +9,8 @@
 		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
-		<script src="https://rawgit.com/nhab/Focus/master/focus.js"></script>
-		<!--script src="focus.js"></script-->
+		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
 
 	</head>
 	<body>
@@ -58,13 +58,13 @@
 					onStateChange(rbs,
 					  function(e)
 					  {
-						var atype=radioBoxes_getValue(rbs);
+						var atype=get_RadioBoxes(rbs);
 						data["a-type"]=atype;
 					  }
 					);
 					onStateChange(cbs,
 						function oncheckBoxesChange(e) {
-							var ii = checkBoxes_getValue(cbs);
+							var ii = get_checkBoxes(cbs);
 							data.Features=ii;
 						}
 					);
@@ -73,7 +73,7 @@
 						function onRangeChange(e){
                         
 						    data["rng"]=e.target.value;
-                            label_setValue(lblRng,data["rng"]);
+                            set_Label(lblRng,data["rng"]);
 						}
 					);
 					
