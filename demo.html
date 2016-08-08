@@ -2,6 +2,7 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
+         <meta charset="UTF-8"> 
 		<!--link rel="stylesheet" type="text/css" href="stylesheets/styles.css" /-->
 		<!--link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" /-->
 		<!--script src="https://raw.githubusercontent.com/nhab/Focus/master/focus.js"></script-->
@@ -30,7 +31,7 @@
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					newLine(doc);
 					var rng=range(doc," Monthly  ",90,"myRange");
-					label(doc,  "prefferation" ,"head1");
+					label(doc,  " prefferation" ,"head1");
 					line(doc);
 					label(doc,"range:"+data["rng"]);
 					
@@ -40,12 +41,13 @@
 					//look and feel :__________________________________
 					
 					styleButton(b);
+                 
 					//cssSet(b,"waves-effect waves-light btn-large");
 					//
 					dimention(doc,"70%");
 					border(doc);
 					AlignHCenter(doc);
-					debugger;
+					//debugger;
 					AlignVCenter(doc);
 					padding(doc,40);
 					margin(txtName,10);
@@ -54,13 +56,14 @@
 					  function(e)
 					  {
 						//console.log(e);
-						var atype=radioBoxes_getState(rbs);
+                        
+						var atype=radioBoxes_getValue(rbs);
 						data["a-type"]=atype;
 					  }
 					);
 					onStateChange(cbs,
 						function oncheckBoxesChange(e) {
-							var ii = checkBoxes_getState(cbs);
+							var ii = checkBoxes_getValue(cbs);
 							data.Features=ii;
 						}
 					);
@@ -86,9 +89,6 @@
 						var r=tableRow(t);
 						var c3=tableCell(r,"Features");
 						var c4=tableCell(r,data["Features"]);
-
-						
-						
 					
 						t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
 					c3.style="border-style:solid; border-width: 1px;border-color:red;";
