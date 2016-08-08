@@ -440,7 +440,7 @@ function label(parent,title)
 
     while(title.substring(i--,1)==" ")
         x.innerHTML=x.innerHTML+"&nbsp";
-        
+
 	x.style="display:inline-block;";
 	parent.appendChild(x);
 	return x;
