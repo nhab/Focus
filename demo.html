@@ -18,12 +18,12 @@
 			<script>
 				window.onload = function() {
 					// Initial states data
+					var data={};
 					data["rng"]=10;	
 					//____________ elements _______________________________________
 					var bdy=document.body;
 					doc=container(bdy);
 					
-					var data={};
 					
 					var txtName=textBox(doc,"name");
 					newLine(doc);
@@ -81,8 +81,11 @@
 					);
 					
 					b.onclick=function(){
+						//next page :
 						data["a-name"]=txtName.value;
 						Clear(doc);
+						label(doc,"Summery");
+						newLine(doc);
 						var t=table(doc);
 						var r=tableRow(t);
 						var c1=tableCell(r,"name:");
