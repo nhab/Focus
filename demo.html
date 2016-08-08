@@ -9,8 +9,8 @@
 		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
-		<script src="https://rawgit.com/nhab/Focus/master/focus.js"></script>
-		<!--script src="focus.js"></script-->
+		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
 
 	</head>
 	<body>
@@ -30,16 +30,18 @@
 					line(doc);
 					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
 					newLine(doc);
-					var rng=range(doc," Monthly  ",90,"myRange");
+					var rng=range(doc," Range of it  ",90,"myRange");
 					label(doc,  " prefferation" ,"head1");
 					line(doc);
 					label(doc,"range:"+data["rng"]);
 					
-					
-					//console.log(t);
 					var b=button(doc,"wipe the screen and see selected values");
+
 					//look and feel :__________________________________
+                    boxShadow(txtName);
 					
+                                       
+                    setFunctionBulk(margin,[txtName,rbs,cbs],10);
 					styleButton(b);
                  
 					//cssSet(b,"waves-effect waves-light btn-large");
