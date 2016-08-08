@@ -204,7 +204,7 @@ function radioBoxes(parent,title,arrItems,name)
 			if(x1.checked=="checked")
 			{*/
 				//debugger;
-				var event = new Event('change');
+				var event = new Event('Intract');
 				x.dispatchEvent(event);
 			//}
 		};
@@ -249,7 +249,7 @@ function checkBoxes(parent,title,arrItems)
 		x1.id="cb"+i;
 		x1.onchange=function(){
 		
-				var event = new Event('change');
+				var event = new Event('Intract');
 				x.dispatchEvent(event);
 		
 		};
