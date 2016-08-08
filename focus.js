@@ -21,11 +21,15 @@ function hoverStyle(obj,style)
 
     obj.onmouseleave=function(){
         obj.style.backgroundColor=color1;
+        obj.style.boxShadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
     };
+    obj.onmouseenter=function(){
+     obj.style.boxShadow="0 0 0 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
+    }
 }
     //(_Data)____________________________________________________________
 /*__________________________________________________*/
-function radioBoxes_setValue(radioboxes,indx)
+function set_RadioBoxes(radioboxes,indx)
 {
 	var len=radioboxes.children.length;
 	var id="rb"+indx;
@@ -34,7 +38,7 @@ function radioBoxes_setValue(radioboxes,indx)
 			radioboxes.children[i].checked=true;
 }
 /*__________________________________________________*/
-function radioBoxes_getValue(radioboxes)
+function get_RadioBoxes(radioboxes)
 {
 	var len=radioboxes.children.length;
 	for(i=0;i<len;i++)
@@ -43,12 +47,17 @@ function radioBoxes_getValue(radioboxes)
 	return undefined;
 }
 /*__________________________________________________*/
-function label_setValue(objLabel,title)
+function set_Label(objLabel,title)
 {
 	objLabel.innerHTML= title;
 }
 /*__________________________________________________*/
-function checkBoxes_setValue(checkboxes,indxes)
+function get_Label(objLabel)
+{
+	return objLabel.innerHTML;
+}
+/*__________________________________________________*/
+function set_CheckBoxes(checkboxes,indxes)
 {
 	var len=checkboxes.children.length;
 	
@@ -61,7 +70,7 @@ function checkBoxes_setValue(checkboxes,indxes)
 		}
 }
 /*__________________________________________________*/
-function checkBoxes_getValue(checkboxes)
+function get_checkBoxes(checkboxes)
 {
 	
 	var len=checkboxes.children.length;
