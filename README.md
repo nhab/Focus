@@ -78,14 +78,26 @@ it generates these code dynamically on the fly :
  radioBoxes_getState(radioboxes)
  checkBoxes_setState(checkboxes,indxes)
  checkBoxes_getState(checkboxes)
+ hoverStyle(obj,style)
  
  //(______________ look and feel concern  : _____________________)
-  CssSet(obj,cssName)
+  css (obj,cssName)
+  border(obj,width,color)
+  boxShadow(obj)
+  styleButton(objBtn)
+  dimention(obj,width,height)
+  margin(obj,val)
+  padding(obj,val)
+   AlignHCenter(obj)
+   AlignVCenter(obj)
+   
   
  //(______________ miscellaneous         : _____________________)
   Clear(node)                     //Clears all child nodes of the element
   AddHtml2Body(parent,sHtml)     //Appends a peice of html code to the document.body 
   Addscript2Head(scriptUrl)      //Adds a script referencing url to the Head of current HTML
+  setFunctionBulk(funct,arr,value)
+  Attribute(obj,atrib,val)
   
   
 ```
