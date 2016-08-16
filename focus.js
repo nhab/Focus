@@ -207,6 +207,12 @@ function align(obj,vertical,horizontal)
 	obj.style =obj.style+";vertical-align:"+vertical+";";
 	obj.style =obj.style+";vertical-align:"+vertical+";";
 }
+function font(obj)
+{
+	obj.style.fontFamily="Helvetica Neue,Helvetica, sans - serif";
+	obj.style.size="17px";
+	obj.style.lineHeight="21 px";
+}
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
