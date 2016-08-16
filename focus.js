@@ -207,10 +207,16 @@ function align(obj,vertical,horizontal)
 	obj.style =obj.style+";vertical-align:"+vertical+";";
 	obj.style =obj.style+";vertical-align:"+vertical+";";
 }
-function font(obj)
+function font(obj,family,size)
 {
-	obj.style.fontFamily="Helvetica Neue,Helvetica,sans-serif";
-	obj.style.fontSize="17px";
+	if(family!=undefined )
+		obj.style.fontFamily=family;
+	else
+		obj.style.fontFamily="Helvetica Neue,Helvetica,sans-serif";
+	if(size!=undefined )
+		obj.style.fontSize=size;
+	else
+		obj.style.fontSize="17px";
 	obj.style.lineHeight="21px";
 }
  //(__________________________________ structure concern functions : ____________________________________)
