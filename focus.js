@@ -209,9 +209,9 @@ function align(obj,vertical,horizontal)
 }
 function font(obj)
 {
-	obj.style.fontFamily="Helvetica Neue,Helvetica, sans - serif";
-	obj.style.size="17px";
-	obj.style.lineHeight="21 px";
+	obj.style.fontFamily="Helvetica Neue,Helvetica,sans-serif";
+	obj.style.fontSize="17px";
+	obj.style.lineHeight="21px";
 }
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
