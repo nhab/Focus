@@ -219,6 +219,18 @@ function font(obj,family,size)
 		obj.style.fontSize="17px";
 	obj.style.lineHeight="21px";
 }
+function colors(obj,color,bkColor)
+{
+	if(color!=undefined )
+		obj.style.color=color;
+	else
+		obj.style.color="#000066";
+	if(bkColor!=undefined )
+		obj.style.BackgroundColor=bkColor;
+	else
+		obj.style.BackgroundColor="#9999FF";
+
+}
  //(__________________________________ structure concern functions : ____________________________________)
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
