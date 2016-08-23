@@ -29,12 +29,17 @@
 					//Attribute(head1,"style","background-color: #aa9add");
 					
 					doc=container(bdy);
-					Attribute(doc,"style","	background-color: #baadff");
-					var lbl1=label(doc,"Data Input");
-					debugger;
-					font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
 					font(doc,"Open Sans,sans-serif","16px");
-					colors(lbl1)
+					Attribute(doc,"style","	background-color: #baadff");
+					
+					var t=table   (doc)         ;
+					border(t);
+ 					var r=tableRow(t);
+ 					var c=tableCell(r,"ghjg") ;
+					var lbl1=label(doc,"Data Input");
+					font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
+					colors(lbl1);
+					
 					newLine(doc);
 					var txtName=textBox(doc,"name");
 					
