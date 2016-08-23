@@ -29,24 +29,16 @@
 					//Attribute(head1,"style","background-color: #aa9add");
 					
 					doc=container(bdy);
-					font(doc,"Open Sans,sans-serif","16px");
-					Attribute(doc,"style","	background-color: #baadff");
 					
 					
 					var lbl1=label(doc,"Data Input");
-					font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
-					colors(lbl1);
 					
 					newLine(doc);
 					
 					var tbl=table   (doc)     ;
  					var r=tableRow(tbl);
  					var c=tableCell(r,"ghjg") ;
-					border(c); 
-					debugger;
-					padding(c,"20");
-					colors(c,undefined,"#ccaaff");
-					
+ 					
 					var txtName=textBox(c,"name");
 					
 					newLine(c);
@@ -64,10 +56,22 @@
 					line(doc);
 					
 					var b=button(doc,"wipe the screen and see selected values");
-					font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
-					//look and feel :__________________________________
-                    			boxShadow(txtName);
 					
+					//look and feel :__________________________________
+					debugger;
+					font(doc,"Open Sans,sans-serif","16px");
+					Attribute(doc,"style","	background-color: #baadff");
+					
+					font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
+					colors(lbl1);
+					
+					border(c); 
+					debugger;
+					padding(c,"20");
+					colors(c,undefined,"#ccaaff");
+					
+                    			boxShadow(txtName);
+					font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
                                        
                     			setFunctionBulk(margin,[txtName,rbs,cbs],10);
 					styleButton(b);
