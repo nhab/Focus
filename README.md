@@ -10,6 +10,7 @@ Focus.js is framework for make coding and debuging the web development much easi
 
 It **generates Html DOM elements dynamically on the fly**.
 ## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo")
+## [**Demo**](https://raw.githubusercontent.com/nhab/Focus/gh-pages/demo.html "Demo")
 
 ## Benifits
   - :arrow_right: Focus on coding instead of disruption made by switching between skills.
