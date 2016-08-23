@@ -43,7 +43,7 @@
  					var r=tableRow(tbl);
  					var c=tableCell(r,"ghjg") ;
 					border(c); 					
-					colors(c,"#ccaaff");
+					colors(c,undefined,"#ccaaff");
 					
 					var txtName=textBox(c,"name");
 					
@@ -58,7 +58,8 @@
 					line(c);
 					
 					var lblRng=label(c,"range:"+data["rng"]);
-					line(c);
+					
+					line(doc);
 					
 					var b=button(doc,"wipe the screen and see selected values");
 					font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
