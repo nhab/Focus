@@ -32,29 +32,33 @@
 					font(doc,"Open Sans,sans-serif","16px");
 					Attribute(doc,"style","	background-color: #baadff");
 					
-					var t=table   (doc)         ;
-					border(t);
- 					var r=tableRow(t);
- 					var c=tableCell(r,"ghjg") ;
+					
 					var lbl1=label(doc,"Data Input");
 					font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
 					colors(lbl1);
 					
 					newLine(doc);
-					var txtName=textBox(doc,"name");
 					
-					newLine(doc);
+					var tbl=table   (doc)     ;
+					border(tbl);
+ 					var r=tableRow(tbl);
+ 					var c=tableCell(r,"ghjg") ;
+ 					
 					
-					var rbs=radioBoxes(doc,"a-Type : ",["Conventinal","formal","traditional"]);
-					var cbs = checkBoxes(doc,"Features  : ",["cashback","Lifestyle","Travel"]);
-					newLine(doc);
+					var txtName=textBox(c,"name");
 					
-					var rng=range(doc," Range of it  ",90,"myRange");
-					label(doc,  " prefferation" ,"head1");
-					line(doc);
+					newLine(c);
 					
-					var lblRng=label(doc,"range:"+data["rng"]);
-					line(doc);
+					var rbs=radioBoxes(c,"a-Type : ",["Conventinal","formal","traditional"]);
+					var cbs = checkBoxes(c,"Features  : ",["cashback","Lifestyle","Travel"]);
+					newLine(c);
+					
+					var rng=range(c," Range of it  ",90,"myRange");
+					label(c,  " prefferation" ,"head1");
+					line(c);
+					
+					var lblRng=label(c,"range:"+data["rng"]);
+					line(c);
 					
 					var b=button(doc,"wipe the screen and see selected values");
 					font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
