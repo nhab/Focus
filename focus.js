@@ -231,7 +231,7 @@ function colors(obj,color,bkColor)
 		obj.style.BackgroundColor="#9999FF";
 
 }
- //(__________________________________ structure concern functions : ____________________________________)
+ //(__________________________________ layout and structure concern functions : ____________________________________)
 /*__________________________________________________*/
 function wizard(parent,fnWizPages,data)
 {
@@ -533,48 +533,7 @@ function dropDown(parent,title,arrItems)
 	parent.appendChild(x);
 	return x;
 }
-/*__________________________________________________*/
-function simpleDatePicker(parent,title)
-	{
-		var x = document.createElement("DIV");
-		var lbl = document.createElement("DIV");
-		
-		objVal = label(x,title);
-		//load year
-		var ddY=document.createElement("SELECT");
-		
-		for(i=1850;i<=2100;i++)
-		{
-			var option = document.createElement("option");
-			option.text = i.toString();
-			ddY.add(option);
-		}
-		x.appendChild(ddY);
-		
-		//load mon
-		var ddM=document.createElement("SELECT");
-		
-		for(i=1;i<=12;i++)
-		{
-			var option = document.createElement("option");
-			option.text = i.toString();
-			ddM.add(option);
-		}
-		x.appendChild(ddM);
-		
-		//load day
-		var ddD=document.createElement("SELECT");
-		
-		for(i=1;i<=31;i++)
-		{
-			var option = document.createElement("option");
-			option.text = i.toString();
-			ddD.add(option);
-		}
-		x.appendChild(ddD);
-		parent.appendChild(x);
-		return x;
-	}
+
 /*__________________________________________________*/
 function table(parent)
 { 
@@ -708,4 +667,69 @@ function Attribute(obj,atrib,val)
 function a()//for testing purposes :)
 {
 	alert("Test");
+}
+/*------------------ Complex components --------------*/
+
+function simpleDatePicker(parent,title)
+{
+	var x = document.createElement("DIV");
+	var lbl = document.createElement("DIV");
+	
+	objVal = label(x,title);
+	//load year
+	var ddY=document.createElement("SELECT");
+	
+	for(i=1850;i<=2100;i++)
+	{
+		var option = document.createElement("option");
+		option.text = i.toString();
+		ddY.add(option);
+	}
+	x.appendChild(ddY);
+	
+	//load mon
+	var ddM=document.createElement("SELECT");
+	
+	for(i=1;i<=12;i++)
+	{
+		var option = document.createElement("option");
+		option.text = i.toString();
+		ddM.add(option);
+	}
+	x.appendChild(ddM);
+	
+	//load day
+	var ddD=document.createElement("SELECT");
+	
+	for(i=1;i<=31;i++)
+	{
+		var option = document.createElement("option");
+		option.text = i.toString();
+		ddD.add(option);
+	}
+	x.appendChild(ddD);
+	parent.appendChild(x);
+	return x;
+}
+/*__________________________________________________*/	
+function MenuDropdownContainer(parent)
+{
+	var x = document.createElement("DIV");
+	Attribute(x,"style","position: relative; display: inline-block;");
+	parent.appendChild(x);
+	return x;
+}
+/*__________________________________________________*/
+function MenuDropdown(menuContainer)
+{
+	var x=Button(menuContainer);
+	var s= "background-color: #4CAF50;"
+    	s=s+"color: white;";
+    	s=s+"padding: 16px;";
+    	s=s+"font-size: 16px;";
+    	s=s+"border: none;";
+    	s=s+"cursor: pointer;";
+	Attribute(x,"style",s);
+	menuContainer.appendChild(x);
+	return x;
 }
