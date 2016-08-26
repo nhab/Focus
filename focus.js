@@ -722,7 +722,7 @@ function MenuDropdownContainer(parent)
 /*__________________________________________________*/
 function MenuDropdown(menuContainer)
 {
-	var x=Button(menuContainer);
+	var x=button(menuContainer);
 	var s= "background-color: #4CAF50;"
     	s=s+"color: white;";
     	s=s+"padding: 16px;";
