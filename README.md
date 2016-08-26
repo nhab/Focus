@@ -19,7 +19,7 @@ It **generates Html DOM elements dynamically on the fly**.
   - :eight_spoked_asterisk: Straightforward debugging.
   - :fast_forward: Much more speed of product delivery.
   - :diamond_shape_with_a_dot_inside: Endless posibilities and extensibility
-  - :do_not_litter: Minimum dependency.
+  - :do_not_litter: no dependency to other libraries.
   - :closed_lock_with_key: Full compatibility.
   - :eyes: Minimum learning curve and easy to use.
   - :cloud: Lightweight.
