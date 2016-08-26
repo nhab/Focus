@@ -12,6 +12,7 @@ It **generates Html DOM elements dynamically on the fly**.
 ## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo") 
 ## Benifits
   - :arrow_right: Focus on coding instead of disruption made by switching between skills.
+  - :cloud: seperation of real concerns in front end developement: layout , look and feel and Intractions and states.
   - :pisces: Much less coding.
   - :no_mobile_phones: Much less errors.
   - :repeat: Much easier to follow your code.
@@ -42,7 +43,7 @@ it generates these code dynamically on the fly :
 
 ##API
 ```javascript
- //(______________ structure concern  :__________________)
+ //(______________ Layout concern  :__________________)
  wizard(parent,fnWizPages,data) //appends a wizard element .fnWizPagesArray is an array of functions creating pages
  line    (parent)                //appends a horizontal rule(line) to the document 
  newLine (parent)                //appends a line feed (<br> element) to the parent
