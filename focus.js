@@ -739,8 +739,8 @@ function subMenu(menu,title,url)
 	var l=link(menu,title,url);
 	
 	var s="display: none;";
-    	s=s+"position: absolute;
-    	s=s+background-color: #f9f9f9;";
+    	s=s+"position: absolute;";
+    	s=s+"background-color: #f9f9f9;";
     	s=s+"min-width: 160px;";
     	s=s+"box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);";
     	Attribute(l,"style",s);
