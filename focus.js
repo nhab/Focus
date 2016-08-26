@@ -720,9 +720,9 @@ function MenuDropdownContainer(parent)
 	return x;
 }
 /*__________________________________________________*/
-function MenuDropdown(menuContainer)
+function MenuDropdown(menuContainer,menuTitle)
 {
-	var x=button(menuContainer);
+	var x=button(menuContainer,menuTitle);
 	var s= "background-color: #4CAF50;"
     	s=s+"color: white;";
     	s=s+"padding: 16px;";
