@@ -44,7 +44,7 @@ it generates these code dynamically on the fly :
 ##API
 ```javascript
  //(______________ Layout concern  :__________________)
- wizard(parent,fnWizPages,data) //appends a wizard element .fnWizPagesArray is an array of functions creating pages
+
  line    (parent)                //appends a horizontal rule(line) to the document 
  newLine (parent)                //appends a line feed (<br> element) to the parent
   
@@ -57,7 +57,6 @@ it generates these code dynamically on the fly :
  image   (parent,source,css)           // appends an image
  button  (parent,title,onclickFunction)       //appends a button
  div(parent,css)
- simpleDatePicker(parent,title)// a very primitive DatePicker
   
  table   (parent)             // appends a table element to the document and returns it.
  tableRow(table)                  // appends a table row element into the specified table.
@@ -70,6 +69,10 @@ it generates these code dynamically on the fly :
 
  listItem(parent,text) // appends a 'LI' item to the list
  Lists(parent,arrItems)  // appends a 'ul' 
+ 
+ 
+ simpleDatePicker(parent,title)// a very primitive DatePicker
+  wizard(parent,fnWizPages,data) //appends a wizard element .fnWizPagesArray is an array of functions creating pages
  
  //(______________ Intractions and states concern : _________________)
   // onChangeFunction could have a parameter which contain every details related to the event
