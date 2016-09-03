@@ -58,7 +58,8 @@ function get_Label(objLabel)
 }
 /*__________________________________________________*/
 function set_CheckBoxes(checkboxes,indxes)
-{
+{	debugger;
+
 	var len=checkboxes.children.length;
 	
 	var j=0;
@@ -747,5 +748,54 @@ function subMenu(menu,title,url)
     	menu.appendChild(l);
     	return l; 
 }
+/* ============================================================================*/
+/*_____________________________________________________________________________*/
+/*                    Object oriented implementation					       */
 
-/*__________________________________________________*/
+function Intraction( obj )
+ {
+	
+	this.onStateChange=function (onChangeFunction)
+	{
+		obj.addEventListener('Intract',onChangeFunction,false);
+	}
+
+	this.hoverStyle=function (style)
+	{
+		hoverStyle(obj,style);
+	}
+}
+/*______________________________________________________*/
+function Data()
+{
+	this.set_RadioBoxes=function (radioboxes,indx)
+	{
+		set_RadioBoxes(radioboxes,indx);
+	}
+
+	/*__________________________________________________*/
+	this.get_RadioBoxes=function (radioboxes)
+	{
+		get_RadioBoxes(radioboxes);
+	}
+	/*__________________________________________________*/
+	this.set_Label=function (objLabel,title)
+	{
+		set_Label (objLabel,title);
+	}
+	/*__________________________________________________*/
+	this.get_Label=function (objLabel)
+	{
+		get_Label(objLabel);
+	}
+	/*__________________________________________________*/
+	this.set_CheckBoxes=function (checkboxes,indxes)
+	{
+		set_CheckBoxes(checkboxes,indxes);
+	}
+	/*__________________________________________________*/
+	this.get_checkBoxes=function (checkboxes)
+	{
+		get_checkBoxes(checkboxes);
+	}
+}
