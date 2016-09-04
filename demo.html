@@ -9,14 +9,17 @@
 		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
 		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
-		<script src="https://rawgit.com/nhab/Focus/master/focus.js"></script>
-		
+		<!script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
 		<!--script src="focus.js"></script-->
 
 	</head>
 	<body>
 		<form>
 			<script>
+				/*______________________________________________________*/
+
+
 				window.onload = function() {
 					// Initial states data
 					var data={};
@@ -28,7 +31,7 @@
 					
 					//var head1=container(bdy);
 					//Attribute(head1,"style","background-color: #aa9add");
-					debugger;
+					//debugger;
 					var mnu=MenuDropdownContainer(bdy);
 					var mm1=MenuDropdown(mnu,"File");
 					var mm2=MenuDropdown(mnu,"edit");
@@ -74,7 +77,6 @@
 					colors(lbl1);
 					
 					border(c); 
-					debugger;
 					padding(c,"20");
 					margin(c,"20");
 					colors(c,undefined,"#ccaaff");
@@ -90,13 +92,13 @@
 					dimention(doc,"70%");
 					border(doc);
 					AlignHCenter(doc);
-					//debugger;
+					
 					//AlignVCenter(doc);
 					padding(doc,40);
 					margin(txtName,10);
 					//____________data
-				
-					//Data.set_CheckBoxes(cbs,[1]);
+					
+					Data.setCheckBoxes(cbs,[1]);
 
 					//state and itractions :__________________________________	
                     					
