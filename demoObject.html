@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+         <meta charset="UTF-8"> 
+		<!--link rel="stylesheet" type="text/css" href="stylesheets/styles.css" /-->
+		<!--link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" /-->
+		<!--script src="https://raw.githubusercontent.com/nhab/Focus/master/focus.js"></script-->
+		<!--script src="https://raw.githack.com/nhab/Focus/master/focus.js"></script-->
+		<!--script src="https://cdn.rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<!--script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<!script src="https://rawgit.com/nhab/Focus/master/focus.js"></script-->
+		<script src="focus.js"></script>
+		<!--script src="focus.js"></script-->
+
+	</head>
+	<body>
+		<form>
+			<script>
+				/*______________________________________________________*/
+
+
+				window.onload = function() {
+					// Initial states data
+					var data={};
+					data["rng"]=10;	
+					//____________ elements _______________________________________
+					
+					var bdy=document.body;
+					Attribute(bdy,"style","background:linear-gradient(45deg,#9380ff,#7931aa  )");
+					
+					var head1=container(bdy);
+					Attribute(head1,"style","background-color: #aa9add");
+					
+					var mnu=Structure.MenuDropdownContainer(bdy);
+					var mm1=Structure.MenuDropdown(mnu,"File");
+					var mm2=Structure.MenuDropdown(mnu,"edit");
+					var mm2=Structure.MenuDropdown(mnu,"View");
+					var mm2=Structure.MenuDropdown(mnu,"Tools");
+					var mm2=Structure.MenuDropdown(mnu,"Help");
+					
+					doc=Structure.container(bdy);
+					
+					
+					var lbl1=Structure.label(doc,"Data Input");
+					
+					Structure.newLine(doc);
+					
+					var tbl=Structure.table   (doc)     ;
+ 					var r=Structure.tableRow(tbl);
+ 					var c=Structure.tableCell(r,"ghjg") ;
+ 					
+					var txtName=Structure.textBox(c,"name");
+					
+					Structure.newLine(c);
+					
+					var rbs=Structure.radioBoxes(c,"a-Type : ",["Conventinal","formal","traditional"]);
+					var cbs = Structure.checkBoxes(c,"Features  : ",["cashback","Lifestyle","Travel"]);
+					Structure.newLine(c);
+					
+					var rng=Structure.range(c," Range of it  ",90,"myRange");
+					Structure.label(c,  " prefferation" ,"head1");
+					Structure.line(c);
+					
+					var lblRng=Structure.label(c,"range:"+data["rng"]);
+					
+					Structure.line(doc);
+					debugger;
+					var b=Structure.button(doc,"wipe the screen and see selected values");
+					
+					//look and feel :__________________________________
+					debugger;
+					LookFeel.font(doc,"Open Sans,sans-serif","16px");
+					Attribute(doc,"style","	background-color: #baadff");
+					
+					LookFeel.font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
+					LookFeel.colors(lbl1);
+					
+					LookFeel.border(c); 
+					LookFeel.padding(c,"20");
+					LookFeel.margin(c,"20");
+					LookFeel.colors(c,undefined,"#ccaaff");
+					
+                	LookFeel.boxShadow(txtName);
+					LookFeel.font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
+                                       
+                    setFunctionBulk(margin,[txtName,rbs,cbs],10);
+					LookFeel.styleButton(b);
+                 
+					//cssSet(b,"waves-effect waves-light btn-large");
+					//
+					LookFeel.dimention(doc,"70%");
+					LookFeel.border(doc);
+					LookFeel.AlignHCenter(doc);
+					
+					//LookFeel.AlignVCenter(doc);
+					LookFeel.padding(doc,40);
+					LookFeel.margin(txtName,10);
+					//____________data
+					
+					Data.setCheckBoxes(cbs,[1]);
+
+					//state and itractions :__________________________________	
+                    					
+					Intraction.onStateChange(rbs,
+					  function(e)
+					  {
+						var atype=get_RadioBoxes(rbs);
+						data["a-type"]=atype;
+					  }
+					);
+					Intraction.onStateChange(cbs,
+						function oncheckBoxesChange(e) {
+							var ii = get_checkBoxes(cbs);
+							data.Features=ii;
+						}
+					);
+					
+					Intraction.onStateChange(rng,
+						function onRangeChange(e){
+                        				data["rng"]=e.target.value;
+                            				set_Label(lblRng,data["rng"]);
+						}
+					);
+					
+					b.onclick=function(){
+						//next page :
+						data["a-name"]=txtName.value;
+						Clear(doc);
+						label(doc,"Summery");
+						newLine(doc);
+						var t=table(doc);
+						var r=tableRow(t);
+						var c1=tableCell(r,"name:");
+						var c2=tableCell(r,data["a-name"]);
+						
+						var r=tableRow(t);
+						var c3=tableCell(r,"type");
+						var c4=tableCell(r,data["a-type"]);
+
+						var r=tableRow(t);
+						var c3=tableCell(r,"Features");
+						var c4=tableCell(r,data["Features"]);
+					
+                    				var r=tableRow(t);
+						var c3=tableCell(r,"Rang");
+						var c4=tableCell(r,data["rng"]);
+					
+						t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
+					c3.style="border-style:solid; border-width: 1px;border-color:red;";
+						
+					};
+					
+				};
+			</script>
+		</form>
+	</body>
+</html>
