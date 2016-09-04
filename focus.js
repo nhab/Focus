@@ -58,8 +58,7 @@ function get_Label(objLabel)
 }
 /*__________________________________________________*/
 function set_CheckBoxes(checkboxes,indxes)
-{	debugger;
-
+{	
 	var len=checkboxes.children.length;
 	
 	var j=0;
@@ -751,51 +750,214 @@ function subMenu(menu,title,url)
 /* ============================================================================*/
 /*_____________________________________________________________________________*/
 /*                    Object oriented implementation					       */
-
-function Intraction( obj )
- {
+var Data=
+{
 	
-	this.onStateChange=function (onChangeFunction)
+	setCheckBoxes:function (checkboxes,indxes)
 	{
-		obj.addEventListener('Intract',onChangeFunction,false);
-	}
+		return set_CheckBoxes(checkboxes,indxes);
+	},
+	// _________________________________________________
+	
+	setRadioBoxes:function (radioboxes,indx)
+	{
+		return set_RadioBoxes(radioboxes,indx);
+	},
 
-	this.hoverStyle=function (style)
+	// _________________________________________________
+	getRadioBoxes:function (radioboxes)
 	{
-		hoverStyle(obj,style);
+		return get_RadioBoxes(radioboxes);
+	},
+	// _________________________________________________
+	set_Label:function (objLabel,title)
+	{
+		return set_Label (objLabel,title);
+	},
+	// _________________________________________________
+	get_Label:function (objLabel)
+	{
+		return get_Label(objLabel);
+	},
+	
+	// _________________________________________________
+	get_checkBoxes:function (checkboxes)
+	{
+		return get_checkBoxes(checkboxes);
 	}
 }
-/*______________________________________________________*/
-function Data()
-{
-	this.set_RadioBoxes=function (radioboxes,indx)
+var Intraction  =
+ {
+	
+	onStateChange:function (obj,onChangeFunction)
 	{
-		set_RadioBoxes(radioboxes,indx);
+		return obj.addEventListener('Intract',onChangeFunction,false);
+	},
+
+	hoverStyle:function (obj,style)
+	{
+		return hoverStyle(obj,style);
+	}
+}
+
+var LookFeel={	
+	css:function  (obj,cssName)
+	{
+		return css(obj,cssName);
+	},
+	/*__________________________________________________*/
+	border:function (obj,width,color)
+	{
+		return border (obj,width,color);
+	},
+	/*__________________________________________________*/
+	boxShadow:function (obj)
+	{
+		return boxShadow(obj);
+	},
+	/*__________________________________________________*/
+	styleButton:function (objBtn)
+	{
+		return styleButton (objBtn);
+	},
+	/*__________________________________________________*/
+	dimention:function (obj,width,height)
+	{
+		return dimention(obj,width,height);
+	},
+	/*__________________________________________________*/
+	margin:function (obj,val)//top,bottom,right,left)
+	{
+		return margin(obj,val);
+	},
+	/*__________________________________________________*/
+	padding: function (obj,val)
+	{
+		return padding (obj,val);
+	},
+	/*__________________________________________________*/
+	AlignHCenter: function (obj)
+	{
+		return AlignHCenter(obj);
+	},
+	/*__________________________________________________*/
+	AlignVCenter: function (obj)
+	{
+		return AlignVCenter(obj);
+	},
+	align: function (obj,vertical,horizontal)
+	{
+		return align(obj,vertical,horizontal);
+	},
+	font :function (obj,family,size)
+	{
+		return font  (obj,family,size);
+	},
+	colors:function (obj,color,bkColor)
+	{
+		return colors(obj,color,bkColor);
+
 	}
 
-	/*__________________________________________________*/
-	this.get_RadioBoxes=function (radioboxes)
+}
+var Structure={
+
+	line:function (parent)
 	{
-		get_RadioBoxes(radioboxes);
+		return line (parent);
+	},
+	newLine:function (parent)
+	{
+		return newLine (parent);
+	},
+	radioBoxes:function (parent,title,arrItems,name)
+	{
+		return radioBoxes (parent,title,arrItems,name);
+	},
+	checkBoxes:function (parent,title,arrItems)
+	{
+		return checkBoxes(parent,title,arrItems);
+	},
+	
+	listItem:function (parent,text)
+	{
+		return listItem(parent,text);
+	},
+	Lists:function (parent,arrItems)
+	{
+		return Lists(parent,arrItems);
+	},
+	image:function (parent,source,css)
+	{
+		 return image(parent,source,css);
+	},
+	button:function (parent,title,onclickFunction)
+	{
+		return button(parent,title,onclickFunction);
+	},
+	range:function (parent,title,arrValues )
+	{
+		return range(parent,title,arrValues );
+	},
+	div:function (parent)
+	{
+		return div(parent);
+	},
+	container:function (parent)
+	{
+		return container(parent);
+	},
+	link:function (parent,title,url)
+	{
+		return link(parent,title,url)
+	},
+	label:function (parent,title)
+	{
+		return label(parent,title)
+	},
+	checkBox:function (parent,title)
+	{
+		return checkBox(parent,title)
+	},
+	textBox:function (parent,title,val)
+	{
+		return textBox(parent,title,val)
+	},
+	dropDown:function (parent,title,arrItems)
+	{
+		return  dropDown(parent,title,arrItems)
+	},
+	table:function (parent)
+	{
+		return table(parent)
+	},
+	tableRow:function (table)
+	{
+		return tableRow(table)
+	},
+	tableCell:function (TableRow,content)
+	{
+		return tableCell(TableRow,content)
+	},
+	wizard:function (parent,fnWizPages,data)
+	{
+		return wizard(parent,fnWizPages,data);
 	}
-	/*__________________________________________________*/
-	this.set_Label=function (objLabel,title)
+	,
+	simpleDatePicker:function (parent,title)
 	{
-		set_Label (objLabel,title);
-	}
-	/*__________________________________________________*/
-	this.get_Label=function (objLabel)
+		return simpleDatePicker(parent,title)
+	},
+	MenuDropdownContainer:function (parent)
 	{
-		get_Label(objLabel);
-	}
-	/*__________________________________________________*/
-	this.set_CheckBoxes=function (checkboxes,indxes)
+		return MenuDropdownContainer(parent)
+	},
+	MenuDropdown:function (menuContainer,menuTitle)
 	{
-		set_CheckBoxes(checkboxes,indxes);
-	}
-	/*__________________________________________________*/
-	this.get_checkBoxes=function (checkboxes)
+		return MenuDropdown(menuContainer,menuTitle);
+	},
+	subMenu:function (menu,title,url)
 	{
-		get_checkBoxes(checkboxes);
+		return subMenu(menu,title,url)
 	}
 }
