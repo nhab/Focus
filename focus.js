@@ -1005,6 +1005,7 @@ var Structure={
 }
 
 var FileSystem={
+	//ActiveXObject works for IE
 	var fso = new ActiveXObject("Scripting.FileSystemObject"); 
 	getFiles:function(folderspec)
 	{
