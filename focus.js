@@ -592,9 +592,9 @@ function table_Row(tb,title,objs)
 	}
 }
  //(__________________________________ File and folder operations : _________________________________)
-  	var fso = new ActiveXObject("Scripting.FileSystemObject"); 
+  	
 	///----------------------------------------------------------
-	function getFolders(folderspec)
+	function getFolders(folderspec,fso)
 	{
 		var s = "";
         var f = fso.GetFolder(folderspec);
@@ -606,10 +606,11 @@ function table_Row(tb,title,objs)
 		return arr;
 	}
 	/// ----------------------------------------------------------
-	function getFiles(folderspec)
+	function getFiles(folderspec,fso)
 	{
 		var s = "";
-        var f = fso.GetFolder(folderspec);
+		
+        	var f = fso.GetFolder(folderspec);
 
 		
 		var arr=[];
@@ -1004,6 +1005,7 @@ var Structure={
 }
 
 var FileSystem={
+	var fso = new ActiveXObject("Scripting.FileSystemObject"); 
 	getFiles:function(folderspec)
 	{
 		getFiles(folderspec) ;
