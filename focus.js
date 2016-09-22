@@ -591,6 +591,47 @@ function table_Row(tb,title,objs)
 		}
 	}
 }
+ //(__________________________________ File and folder operations : _________________________________)
+  	var fso = new ActiveXObject("Scripting.FileSystemObject"); 
+	///----------------------------------------------------------
+	function getFolders(folderspec)
+	{
+		var s = "";
+        var f = fso.GetFolder(folderspec);
+
+		var subfolders = new Enumerator(f.SubFolders);
+		var arr=[];
+		var i=0;
+		for (; !subfolders.atEnd(); subfolders.moveNext()){arr[i++]=subfolders.item() ;}
+		return arr;
+	}
+	/// ----------------------------------------------------------
+	function getFiles(folderspec)
+	{
+		var s = "";
+        var f = fso.GetFolder(folderspec);
+
+		
+		var arr=[];
+		var i=0;
+		var fc = new Enumerator(f.files);
+        
+		for (; !fc.atEnd(); fc.moveNext()){arr[i++]=fc.item().Name ;}
+		return arr;
+	}
+	// ------------------------------------------------------------
+	//for testing:
+	function CreateDropDownList(arr)
+	{
+		document.write("<select>")
+		for(var i=0;i<arr.length;i++)
+		{
+			document.write("<option value='"+arr[i]+"'>");
+			document.write(arr[i]);
+			document.write("</option>");
+		}
+		document.write("</select>")	;
+	}
 //(__________________________________  miscellaneous/General __________________________________________)
 /*__________________________________________________*/
 function AddHtml2Body(parent,sHtml)
@@ -960,4 +1001,15 @@ var Structure={
 	{
 		return subMenu(menu,title,url)
 	}
+}
+var FileSystem={
+	getFiles:function(folderspec)
+	{
+		getFiles(folderspec) ;
+	},
+	getFolderes:function(folderspec)
+	{
+		getFolderes(folderspec)	;
+	}
+}
 }
