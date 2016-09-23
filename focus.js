@@ -1028,7 +1028,7 @@ var Structure={
 }
 
 var FileSystem={
-	//ActiveXObject works for IE
+	//ActiveXObject works for IE 
 	fso: new ActiveXObject("Scripting.FileSystemObject"),
 	
 	getFiles:function(folderspec)
@@ -1038,7 +1038,7 @@ var FileSystem={
 	getFolderes:function(folderspec)
 	{
 		getFolderes(folderspec)	;
-	}
+	},
 	ReadFile:function(filePathAndName)
 	{
 		ReadFile(filePathAndName);
