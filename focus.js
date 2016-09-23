@@ -621,6 +621,17 @@ function table_Row(tb,title,objs)
 		return arr;
 	}
 	// ------------------------------------------------------------
+	function ReadFile(fpath)
+	{
+		var fso, f1, ts, s;
+		var ForReading = 1;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		ts = fso.OpenTextFile(fpath, ForReading);
+		s = ts.ReadAll();
+		ts.Close();
+		return s;
+	}
+	// ------------------------------------------------------------
 	//for testing:
 	function CreateDropDownList(arr)
 	{
@@ -632,6 +643,10 @@ function table_Row(tb,title,objs)
 			document.write("</option>");
 		}
 		document.write("</select>")	;
+	}
+	function ReadFile()
+	{
+		document.write("<pre>"+ReadFile("d:\\d.txt")+"</pre>");
 	}
 //(__________________________________  miscellaneous/General __________________________________________)
 /*__________________________________________________*/
@@ -1014,6 +1029,10 @@ var FileSystem={
 	getFolderes:function(folderspec)
 	{
 		getFolderes(folderspec)	;
+	}
+	ReadFile:function(filePathAndName)
+	{
+		ReadFile(filePathAndName);
 	}
 
 }
