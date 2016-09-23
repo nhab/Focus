@@ -625,6 +625,14 @@ function table_Row(tb,title,objs)
 	{
 		var fso, f1, ts, s;
 		var ForReading = 1;
+		if (window.DOMParser)
+		{ // Firefox, Chrome, Opera, etc.
+		    alert("ActiveXobject is only working with IE.Use Ie to view.")
+		}
+		else // Internet Explorer
+		{
+			fso = new ActiveXObject("Scripting.FileSystemObject");   
+		} 
 		fso = new ActiveXObject("Scripting.FileSystemObject");
 		ts = fso.OpenTextFile(fpath, ForReading);
 		s = ts.ReadAll();
