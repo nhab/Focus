@@ -1,0 +1,82 @@
+var fnWizPages=[];//an array of functions that create pages
+
+//(___ Intraction concern functions: ____________________________________________)
+ //(_Evnts)_______
+ // onChangeFunction could have a parameter which contain every details related to the event
+ function onStateChange(obj,onChangeFunction)
+ function hoverStyle(obj,style)
+ //(_Data)_______
+function set_RadioBoxes(radioboxes,indx)
+function get_RadioBoxes(radioboxes)
+function set_Label(objLabel,title)
+function get_Label(objLabel)
+function set_CheckBoxes(checkboxes,indxes)
+function get_checkBoxes(checkboxes)
+
+ //(___ look and feel concern functions : _________________________________________)
+ // you can also set style or css properties of each object to change its look and feel:
+ //Positions,Dimentions, Colors, Fonts, Images and Animations. 
+ //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
+function css (obj,cssName)
+function border(obj,width,color)
+function boxShadow(obj)
+function styleButton(objBtn)
+function dimention(obj,width,height)
+function margin(obj,val)//top,bottom,right,left)
+function padding(obj,val)
+function AlignHCenter(obj)
+function AlignVCenter(obj)
+function align(obj,vertical,horizontal)
+function font(obj,family,size)
+function colors(obj,color,bkColor)
+
+ //(___ layout and structure concern functions : ____________________________________)
+function wizard(parent,fnWizPages,data)
+function wizard1(parent,i,fnWizPages,data)
+function line(parent)
+function newLine(parent)
+function radioBoxes(parent,title,arrItems,name)
+function checkBoxes(parent,title,arrItems)
+var objVal;
+function range(parent,title,arrValues )
+function listItem(parent,text)
+function Lists(parent,arrItems)
+function image(parent,source,css)
+function button(parent,title,onclickFunction)
+function div(parent)
+function container(parent)
+function link(parent,title,url)
+function label(parent,title)
+function checkBox(parent,title)
+function textBox(parent,title,val)
+function dropDown(parent,title,arrItems)
+function table(parent)
+function tableRow(table)
+function tableCell(TableRow,content)
+function tableRowTextbox(tb,title)
+function table_Row(tb,title,objs)
+function Header(parent, title)
+
+ //(____ File and folder operations : _____________________________________________)
+	function getFolders(folderspec,fso)
+	function getFiles(folderspec,fso)
+	function ReadFile(fpath)
+	//for testing:
+	function CreateDropDownList(arr)
+	function ReadFile()
+
+//(_____ miscellaneous/General ________________________________________________)
+function AddHtml2Body(parent,sHtml)
+function Addscript2Head(scriptUrl)
+ function objectClone(obj)
+ function setFunctionBulk(funct,arr,value)
+function hexToRgb(hex) {
+function Clear(node)
+function Attribute(obj,atrib,val)
+function a()//for testing purposes :)
+
+/*------------------ Complex components --------------*/
+function simpleDatePicker(parent,title)
+function MenuDropdownContainer(parent)
+function MenuDropdown(menuContainer,menuTitle)
+function subMenu(menu,title,url)
