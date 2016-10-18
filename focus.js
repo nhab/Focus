@@ -202,6 +202,26 @@ function AlignVCenter(obj)
 	obj.style.msTransform= "translateY(50%)";
   	obj.style.transform="translateY(50%)";
 }
+/*__________________________________________________*/
+function AlignVTop(obj)
+{
+	
+	obj.style.position="relative";// =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
+	obj.style.top="0%";
+	obj.style.webkitTransform="translateY(0%)";
+	obj.style.msTransform= "translateY(0%)";
+  	obj.style.transform="translateY(0%)";
+}
+/*__________________________________________________*/
+function AlignVBottom(obj)
+{
+	
+	obj.style.position="relative";// =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
+	obj.style.top="100%";
+	obj.style.webkitTransform="translateY(100%)";
+	obj.style.msTransform= "translateY(100%)";
+  	obj.style.transform="translateY(100%)";
+}
 function align(obj,vertical,horizontal)
 {
 	obj.style =obj.style+";vertical-align:"+vertical+";";
