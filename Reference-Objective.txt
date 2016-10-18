@@ -1,0 +1,63 @@
+var Data=
+{
+	setCheckBoxes:function (checkboxes,indxes)
+	setRadioBoxes:function (radioboxes,indx)
+	getRadioBoxes:function (radioboxes)
+	set_Label:function (objLabel,title)
+	get_Label:function (objLabel)
+	get_checkBoxes:function (checkboxes)
+}
+var Intraction  =
+ {
+	onStateChange:function (obj,onChangeFunction)
+	hoverStyle:function (obj,style)
+}
+
+var LookFeel={	
+	css:function  (obj,cssName)
+	border:function (obj,width,color)
+	boxShadow:function (obj)
+	styleButton:function (objBtn)
+	dimention:function (obj,width,height)
+	margin:function (obj,val)//top,bottom,right,left)
+	padding: function (obj,val)
+	AlignHCenter: function (obj)
+	AlignVCenter: function (obj)
+	align: function (obj,vertical,horizontal)
+	font :function (obj,family,size)
+	colors:function (obj,color,bkColor)
+}
+var Structure={
+	line:function (parent)
+	newLine:function (parent)
+	radioBoxes:function (parent,title,arrItems,name)
+	checkBoxes:function (parent,title,arrItems)
+	listItem:function (parent,text)
+	Lists:function (parent,arrItems)
+	image:function (parent,source,css)
+	button:function (parent,title,onclickFunction)
+	range:function (parent,title,arrValues )
+	div:function (parent)
+	container:function (parent)
+	link:function (parent,title,url)
+	label:function (parent,title)
+	checkBox:function (parent,title)
+	textBox:function (parent,title,val)
+	dropDown:function (parent,title,arrItems)
+	table:function (parent)
+	tableRow:function (table)
+	tableCell:function (TableRow,content)
+	wizard:function (parent,fnWizPages,data)
+	simpleDatePicker:function (parent,title)
+	MenuDropdownContainer:function (parent)
+	MenuDropdown:function (menuContainer,menuTitle)
+	subMenu:function (menu,title,url)
+}
+
+var FileSystem={
+	//ActiveXObject works for IE 
+	fso: new ActiveXObject("Scripting.FileSystemObject"),
+	getFiles:function(folderspec)
+	getFolderes:function(folderspec)
+	ReadFile:function(filePathAndName)
+}
