@@ -1,32 +1,3 @@
-var Data=
-{
-	setCheckBoxes		 (checkboxes,indxes)
-	setRadioBoxes 		(radioboxes,indx)
-	getRadioBoxes 		(radioboxes)
-	set_Label 		(objLabel,title)
-	get_Label 		(objLabel)
-	get_checkBoxes 		(checkboxes)
-}
-var Intraction  =
- {
-	onStateChange		(obj,onChangeFunction)
-	hoverStyle 		(obj,style)
-}
-
-var LookFeel={	
-	css 			 (obj,cssName)
-	border 			(obj,width,color)
-	boxShadow 		(obj)
-	styleButton 		(objBtn)
-	dimention 		(obj,width,height)
-	margin			 (obj,val)//top,bottom,right,left
-	padding 		(obj,val)
-	AlignHCenter 		(obj)
-	AlignVCenter 		(obj)
-	align 			(obj,vertical,horizontal)
-	font  			(obj,family,size)
-	colors 			(obj,color,bkColor)
-}
 var Structure={
 	line			(parent)
 	newLine 		(parent)
@@ -54,6 +25,36 @@ var Structure={
 	subMenu 		(menu,title,url)
 }
 
+var Intraction  =
+ {
+	onStateChange		(obj,onChangeFunction)
+	hoverStyle 		(obj,style)
+}
+
+var LookFeel={	
+	css 			 (obj,cssName)
+	border 			(obj,width,color)
+	boxShadow 		(obj)
+	styleButton 		(objBtn)
+	dimention 		(obj,width,height)
+	margin			 (obj,val)//top,bottom,right,left
+	padding 		(obj,val)
+	AlignHCenter 		(obj)
+	AlignVCenter 		(obj)
+	align 			(obj,vertical,horizontal)
+	font  			(obj,family,size)
+	colors 			(obj,color,bkColor)
+}
+
+var Data=
+{
+	setCheckBoxes		 (checkboxes,indxes)
+	setRadioBoxes 		(radioboxes,indx)
+	getRadioBoxes 		(radioboxes)
+	set_Label 		(objLabel,title)
+	get_Label 		(objLabel)
+	get_checkBoxes 		(checkboxes)
+}
 var FileSystem={
 	//ActiveXObject works for IE 
 	fso: new ActiveXObject("Scripting.FileSystemObject"),
