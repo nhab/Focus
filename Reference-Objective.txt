@@ -1,10 +1,6 @@
 var Structure={
 	line			(parent)
 	newLine 		(parent)
-	radioBoxes 		(parent,title,arrItems,name)
-	checkBoxes		(parent,title,arrItems)
-	listItem 		(parent,text)
-	Lists 			(parent,arrItems)
 	image			(parent,source,css)
 	button 			(parent,title,onclickFunction)
 	range			(parent,title,arrValues )
@@ -13,6 +9,10 @@ var Structure={
 	checkBox 		(parent,title)
 	textBox 		(parent,title,val)
 	dropDown		(parent,title,arrItems)
+	radioBoxes 		(parent,title,arrItems,name)
+	checkBoxes		(parent,title,arrItems)
+	listItem 		(parent,text)
+	Lists 			(parent,arrItems)
 	
 	div 			(parent)
 	container 		(parent)
