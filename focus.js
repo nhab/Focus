@@ -114,6 +114,12 @@ function boxShadow(obj)
     obj.style.boxShadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
 }
 /*__________________________________________________*/
+function FullWidth(obj)
+{
+	obj.style.width="100%";
+	
+}
+/*__________________________________________________*/
 function styleButton(objBtn)
 {
     
