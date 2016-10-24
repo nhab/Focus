@@ -1,65 +1,36 @@
-var Structure={
-	line			(parent)
-	newLine 		(parent)
-	image			(parent,source,css)
-	button 			(parent,title,onclickFunction)
-	range			(parent,title,arrValues )
-	link 			(parent,title,url)
-	label 			(parent,title)
-	checkBox 		(parent,title)
-	textBox 		(parent,title,val)
-	dropDown		(parent,title,arrItems)
-	radioBoxes 		(parent,title,arrItems,name)
-	checkBoxes		(parent,title,arrItems)
-	listItem 		(parent,text)
-	Lists 			(parent,arrItems)
-	
-	div 			(parent)
-	container 		(parent)
-	table 			(parent)
-	tableRow		(table)
-	tableCell 		(TableRow,content)
-	wizard 			(parent,fnWizPages,data)
-	simpleDatePicker	(parent,title)
-	MenuDropdownContainer 	(parent)
-	MenuDropdown  		(menuContainer,menuTitle)
-	subMenu 		(menu,title,url)
-}
+Structure:
+	line	  (parent)				newLine   (parent)
+	image	  (parent,source,css)			button 	  (parent,title,onclickFunction)
+	link 	  (parent,title,url)			range	  (parent,title,arrValues )
+	label 	  (parent,title)			checkBox  (parent,title)
+	textBox   (parent,title,val)			dropDown  (parent,title,arrItems)
+	radioBoxes (parent,title,arrItems,name)		checkBoxes(parent,title,arrItems)
+	listItem   (parent,text)			Lists	  (parent,arrItems)
 
-var Intraction  =
- {
-	onStateChange		(obj,onChangeFunction)
-	hoverStyle 		(obj,style)
-}
+	div 		(parent)			container 		(parent)
+	table 		(parent)			tableRow		(table)
+	tableCell	(TableRow,content)		wizard 			(parent,fnWizPages,data)
+	simpleDatePicker(parent,title)			MenuDropdownContainer 	(parent)
+	MenuDropdown  	(menuContainer,menuTitle)	subMenu 		(menu,title,url)
 
-var LookFeel={	
-	css 			 (obj,cssName)
-	border 			(obj,width,color)
-	boxShadow 		(obj)
-	styleButton 		(objBtn)
-	dimention 		(obj,width,height)
-	margin			 (obj,val)//top,bottom,right,left
-	padding 		(obj,val)
-	AlignHCenter 		(obj)
-	AlignVCenter 		(obj)
-	align 			(obj,vertical,horizontal)
-	font  			(obj,family,size)
-	colors 			(obj,color,bkColor)
-}
+Intraction :
+ 	onStateChange	(obj,onChangeFunction)		hoverStyle 	(obj,style)
 
-var Data=
-{
-	setCheckBoxes		 (checkboxes,indxes)
-	setRadioBoxes 		(radioboxes,indx)
-	getRadioBoxes 		(radioboxes)
-	set_Label 		(objLabel,title)
-	get_Label 		(objLabel)
-	get_checkBoxes 		(checkboxes)
-}
-var FileSystem={
+LookFeel:	
+	css 		(obj,cssName)			border 		(obj,width,color)
+	boxShadow 	(obj)				styleButton 	(objBtn)
+	dimention 	(obj,width,height)		margin		 (obj,val)//top,bottom,right,left
+	padding 	(obj,val)			AlignHCenter 	(obj)
+	AlignVCenter 	(obj)				align 		(obj,vertical,horizontal)
+	font  		(obj,family,size)		colors 		(obj,color,bkColor)
+
+Data:
+	setCheckBoxes	(checkboxes,indxes)		setRadioBoxes 	(radioboxes,indx)
+	getRadioBoxes 	(radioboxes)			set_Label 	(objLabel,title)
+	get_Label 	(objLabel)			get_checkBoxes 	(checkboxes)
+
+FileSystem:
 	//ActiveXObject works for IE 
-	fso: new ActiveXObject("Scripting.FileSystemObject"),
-	getFiles   (folderspec)
-	getFolderes(folderspec)
-	ReadFile   (filePathAndName)
-}
+	fso: new ActiveXObject("Scripting.FileSystemObject")	getFiles   (folderspec)
+	getFolderes(folderspec)					ReadFile   (filePathAndName)
+
