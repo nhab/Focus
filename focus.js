@@ -798,10 +798,12 @@ function MenuDropdownContainer(parent)
 	return x;
 }
 /*__________________________________________________*/
-function MenuDropdown(menuContainer,menuTitle)
+function MenuDropdown(menuContainer,menuTitle,bkColor)
 {
 	var x=button(menuContainer,menuTitle);
-	var s= "background-color: #4CAF50;"
+	if(bkColor=null)
+		bkColor="#4CAF50";
+	var s= "background-color: "+bkColor+";"
     	s=s+"color: white;";
     	s=s+"padding: 16px;";
     	s=s+"font-size: 16px;";
