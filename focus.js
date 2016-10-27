@@ -801,7 +801,7 @@ function MenuDropdownContainer(parent)
 function MenuDropdown(menuContainer,menuTitle,bkColor)
 {
 	var x=button(menuContainer,menuTitle);
-	if(bkColor=null)
+	if(bkColor==null)
 		bkColor="#4CAF50";
 	var s= "background-color: "+bkColor+";"
     	s=s+"color: white;";
