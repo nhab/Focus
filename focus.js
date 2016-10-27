@@ -802,7 +802,7 @@ function MenuDropdown(menuContainer,menuTitle)
 {
 	var x=button(menuContainer,menuTitle);
 
-    	s=s+"padding: 16px;";
+    	var s=s+"padding: 16px;";
     	s=s+"font-size: 16px;";
     	s=s+"border: none;";
     	s=s+"cursor: pointer;";
