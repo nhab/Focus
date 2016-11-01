@@ -19,5 +19,5 @@ var myPrettyCode = function() {
 
    // Here, do what ever you want
 };
-loadScript("focusBase.js", myPrettyCode);
-loadScript("focusComposite.js", myPrettyCode);
+loadScript("https://github.com/nhab/Focus/focusBase.js", myPrettyCode);
+loadScript("https://github.com/nhab/Focus/focusComposite.js", myPrettyCode);
