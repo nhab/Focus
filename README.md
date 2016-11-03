@@ -41,5 +41,4 @@ it generates these code dynamically on the fly :
   <input  name='rb2' type='radio'  />none-Conventinal</input>
 </div>
 ```
-## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo") 
 ##[**Reference**](https://nhab.github.io/Focus/Reference-Objective.txt "Reference")
