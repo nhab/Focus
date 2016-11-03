@@ -24,7 +24,7 @@ It **generates Html DOM elements dynamically on the fly**.
   - :closed_lock_with_key: Full compatibility.
   - :eyes: Minimum learning curve and easy to use.
   - :cloud: Lightweight.
-  
+  - :repeat: Extensibilty: Base Objects are in focusBase.js but you can make Compositeobjects on top of that.
 ## key concept
 when you use Focus.js functions,It **generates Html elements dynamically on the fly**.
 
