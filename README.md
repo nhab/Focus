@@ -4,7 +4,7 @@
 # Focus.js
 Traditional web developement aproach needs more than 3 programming skill to write a single website:html,javascript
 and css ,plus thousands of libraries/frameworks.
-the easier aproach is to focus on javascript which is able to produce the html dom elements and css.
+The easier aproach is to focus on javascript which is able to produce the html dom elements and css.In this way your efforts will be more effective. Focus.js is the answer for such a need.
 
 Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3 skills.
 
