@@ -1,9 +1,9 @@
-
+/*
 function loadScript(url, callback)
 {
     // Adding the script tag to the head as suggested before
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
+    var head    = document.getElementsByTagName('head')[0];
+    var script  = document.createElement('script');
     script.type = 'text/javascript';
     script.src = url;
 
@@ -20,5 +20,13 @@ var myPrettyCode = function() {
    // Here, do what ever you want
 };
 debugger;
-loadScript("https://raw.githubusercontent.com/nhab/Focus/master/focusBase.js", myPrettyCode);
-loadScript("https://raw.githubusercontent.com/nhab/Focus/master/focusComposite.js", myPrettyCode);
+loadScript("focusBase.js", myPrettyCode);
+loadScript("focusComposite.js", myPrettyCode);
+*/
+var lib1= document.createElement("script");
+lib1.src = "focusBase.js";  //saved in "other js" folder
+document.getElementsByTagName("head")[0].appendChild(lib1);
+
+var lib2 = document.createElement("script");
+lib2.src = "focusComposite.js";  //saved in "other js" folder
+document.getElementsByTagName("head")[0].appendChild(lib2);

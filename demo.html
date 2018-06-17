@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+         <meta charset="UTF-8"> 
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="focus.js"></script>
+		<script src="focus.js"></script>
+
+	</head>
+	<body>
+		<form>
+			<script>
+				/*______________________________________________________*/
+
+
+				window.onload = function() {
+					// Initial states data
+					var data={};
+					data["rng"]=10;	
+					//____________ elements _______________________________________
+					
+					var bdy=document.body;
+					Miscellaneous.Attribute(bdy,"style","background:linear-gradient(45deg,#9380ff,#7931aa  )");
+					
+					//var head1=container(bdy);
+					//Attribute(head1,"style","background-color: #aa9add");
+					//debugger;
+					
+					// Add top menu {
+					 var mnu=MenuDropdownContainer(bdy);
+					 var mm1=MenuDropdown(mnu,"File");
+					 var mm2=MenuDropdown(mnu,"edit");
+					 var mm2=MenuDropdown(mnu,"View");
+					 var mm2=MenuDropdown(mnu,"Tools");
+					 var mm2=MenuDropdown(mnu,"Help");
+					//}
+					doc = Focus_Layout.container(bdy);
+					
+					var lbl1 = Focus_Layout.label(doc,"Data Input");
+					
+					Focus_Layout.newLine(doc);
+					
+					//Add table {
+					var tbl= Focus_Layout.table   (doc)      ;
+ 					var r  = Focus_Layout.tableRow(tbl)      ;
+ 					var c  = Focus_Layout.tableCell(r,"ghjg");
+ 					//}
+					
+					var txtName = Focus_Layout.textBox(c,"name");
+					
+					Focus_Layout.newLine(c);
+					
+					var rbs = Focus_Layout.radioBoxes(c ,"a-Type : ",["Conventinal","formal","traditional"]);
+					var cbs = Focus_Layout.checkBoxes(c ,"Features  : ",["cashback","Lifestyle","Travel"]);
+					var rng = Focus_Layout.range     (c ," Range of it  ",90,"myRange");
+					
+					Focus_Layout.label(c,  " prefferation" ,"head1");
+					Focus_Layout.line(c);
+					
+					var lblRng = Focus_Layout.label(c,"range:"+data["rng"]);
+					
+					Focus_Layout.line(doc);
+					
+					var b=Focus_Layout.button(doc,"wipe the screen and see selected values");
+					
+					//look and feel :__________________________________
+					
+					 Focus_LookFeel.font(doc,"Open Sans,sans-serif","16px");
+					 Miscellaneous.Attribute(doc,"style","	background-color: #baadff");
+					
+					 Focus_LookFeel.font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
+					 Focus_LookFeel.colors(lbl1);
+					 var margin=20;
+					 Focus_LookFeel.border(c); 
+					 Focus_LookFeel.padding(c,"20");
+					 Focus_LookFeel.margin(c,"20");
+					 Focus_LookFeel.colors(c,undefined,"#ccaaff");
+					 Focus_LookFeel.boxShadow(txtName);
+					 Focus_LookFeel.font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
+                     Miscellaneous.setFunctionBulk(Focus_LookFeel.margin,[txtName,rbs,cbs],10);
+					 Focus_LookFeel.styleButton(b);
+                 
+					 //cssSet(b,"waves-effect waves-light btn-large");
+					 //
+					 Focus_LookFeel.dimention(doc,"70%");
+					 Focus_LookFeel.border(doc);
+					 Focus_LookFeel.AlignHCenter(doc);
+					
+					 //AlignVCenter(doc);
+					 Focus_LookFeel.padding(doc,40);
+					 Focus_LookFeel.margin(txtName,10);
+					
+					//____________data		__________________________________ 			
+ 					 Focus_Data.set_CheckBoxes(cbs,[1]);
+
+					//state and intraction :__________________________________	
+                     // radio buttons intraction event {			
+					  rbs_onIntract= function(e)  {
+						var atype=Focus_Data.get_RadioBoxes(rbs);
+						data["a-type"]=atype;
+					  };
+					  rbs.addEventListener('Intract',rbs_onIntract,false);
+					 //}
+					 
+					 // checkboxes intraction event {
+					  cbs_onIntract = function oncheckBoxesChange(e) {
+						var ii = Focus_Data.get_checkBoxes(cbs);
+						data.Features=ii;
+					  };
+					  cbs.addEventListener('Intract',cbs_onIntract,false);
+					 //}
+					 
+					 // range intraction event {
+					  rng_onIntract = function onRangeChange(e){
+                    	data["rng"]=e.target.value;
+                    	Focus_Data.set_Label(lblRng,data["rng"]);
+					  }
+					  rng[0].addEventListener('Intract',rng_onIntract,false);
+					 //}
+					
+					b.onclick=function(){
+						//next page :
+						data["a-name"]=txtName.value;
+						Miscellaneous.Clear(doc);
+						Focus_Layout.label(doc,"Summery");
+						Focus_Layout.newLine(doc);
+						
+						var t  = Focus_Layout.table(doc);
+						var r  = Focus_Layout.tableRow(t);
+						var c1 = Focus_Layout.tableCell(r,"name:");
+						var c2 = Focus_Layout.tableCell(r,data["a-name"]);
+						
+						var r  = Focus_Layout.tableRow(t);
+						var c3 = Focus_Layout.tableCell(r,"type");
+						var c4 = Focus_Layout.tableCell(r,data["a-type"]);
+
+						var r  = Focus_Layout.tableRow(t);
+						var c3 = Focus_Layout.tableCell(r,"Features");
+						var c4 = Focus_Layout.tableCell(r,data["Features"]);
+					
+                    	var r  = Focus_Layout.tableRow(t);
+						var c3 = Focus_Layout.tableCell(r,"Rang");
+						var c4 = Focus_Layout.tableCell(r,data["rng"]);
+					
+						t.style="border-style:solid; border-width: 1px;border-color:#aaaaaa;";
+						c3.style="border-style:solid; border-width: 1px;border-color:red;";
+						
+					};
+					
+				};
+			</script>
+		</form>
+	</body>
+</html>
