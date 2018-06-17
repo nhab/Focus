@@ -31,7 +31,7 @@ when you use Focus.js functions,It **generates Html elements dynamically on the 
 
 For example when you write:
 ```javascript
-  radioBoxes(document.body,"Choose one: ",["Conventinal","none-conventional"]);
+  Focus_Layout.radioBoxes(document.body,"Choose one: ",["Conventinal","none-conventional"]);
 ```
 
 it generates these code dynamically on the fly :
