@@ -1,84 +1,69 @@
 var fnWizPages=[];//an array of functions that create pages
 
-//(__________________________________ Intraction concern functions: _____________________________________)
-    //(_Evnts)__________________________________________________________
-// onChangeFunction could have a parameter which contain every details related to the event
-/*
-function onStateChange(obj,onChangeFunction){
-	obj.addEventListener('Intract',onChangeFunction,false);
-}*/
-function hoverStyle(obj,style){
-    var color1=obj.style.backgroundColor;
-    var color2=style.backgroundColor;
-    obj.onmouseover=function(){
-        obj.style.backgroundColor=color2;
-    };
-
-    obj.onmouseleave=function(){
-        obj.style.backgroundColor=color1;
-        obj.style.boxShadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
-    };
-    obj.onmouseenter=function(){
-     obj.style.boxShadow="0 0 0 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
-    }
-}
+var Focus = Focus || {};
+ 
+	//constructor(){}
     //(_Data)____________________________________________________________
-
-	class Focus_Data{
-		static set_RadioBoxes(radioboxes,indx){
-			var len=radioboxes.children.length;
-			var id="rb"+indx;
-			for(i=0;i<len;i++)
-				if(radioboxes.children[i].id==id)
-					radioboxes.children[i].checked=true;
-		}
-		static get_RadioBoxes(radioboxes){
-			var len=radioboxes.children.length;
-			for(var i=0;i<len;i++)
-				if(radioboxes.children[i].checked)
-				   return radioboxes.children[i].id.substring(2);
-			return undefined;
-		}
-		static set_Label(objLabel,title){
-			objLabel.innerHTML= title;
-		}
-		static get_Label(objLabel){			
-			return objLabel.innerHTML;
-		}
-			   
-		static set_CheckBoxes(checkboxes,indxes){	
-			var len=checkboxes.children.length;
+	Focus.Data=class Data{
+		constructor(){
+			this.stuff = null;
+		  } 
+		static	  set_RadioBoxes(radioboxes,indx){
+				var len=radioboxes.children.length;
+				var id="rb"+indx;
+				for(i=0;i<len;i++)
+					if(radioboxes.children[i].id==id)
+						radioboxes.children[i].checked=true;
 			
-			var j=0;
-			for(var i=0;i<len;i++)
-				if(checkboxes.children[i].id=="cb"+indxes[j])
-				{
-					checkboxes.children[i].checked=true;
-					j++;
-				}
+			}
+		static	 get_RadioBoxes(radioboxes){
+				var len=radioboxes.children.length;
+				for(var i=0;i<len;i++)
+					if(radioboxes.children[i].checked)
+					return radioboxes.children[i].id.substring(2);
+				return undefined;
+			}
+		static	 set_Label(objLabel,title){
+				objLabel.innerHTML= title;
+			}
+		static	 get_Label(objLabel){			
+				return objLabel.innerHTML;
+			}
+				
+		static	 set_CheckBoxes(checkboxes,indxes){	
+				var len=checkboxes.children.length;
+				
+				var j=0;
+				for(var i=0;i<len;i++)
+					if(checkboxes.children[i].id=="cb"+indxes[j])
+					{
+						checkboxes.children[i].checked=true;
+						j++;
+					}
+			}
+		static	 get_checkBoxes(checkboxes){
+				
+				var len=checkboxes.children.length;
+				var ret=[];
+				for(var i=0;i<len;i++)
+					if(checkboxes.children[i].checked)
+						ret.push( checkboxes.children[i].id.substring(2));
+				return ret;
+			}
 		}
-		static get_checkBoxes(checkboxes){
-			
-			var len=checkboxes.children.length;
-			var ret=[];
-			for(var i=0;i<len;i++)
-				if(checkboxes.children[i].checked)
-					ret.push( checkboxes.children[i].id.substring(2));
-			return ret;
-		}
-	}
-
+	
 	//(__________________________________ look and feel concern functions : _________________________________)
  // you can also set style or css properties of each object to change its look and feel:
  //Positions,Dimentions, Colors, Fonts, Images and Animations. 
  //todo:providing the focus.js coders complete functionality of css with pure javascript ( no css)
-
-	class Focus_LookFeel{
-		static css (obj,cssName){
-		
+ Focus.LookFeel=class LookFeel{
+	constructor(){
+		this.stuff = null;
+	  } 
+	static css (obj,cssName){
 		obj.className =cssName;
 	}
-		static border(obj,width,color){
+	static border(obj,width,color){
 		var swidth="1",sColor="black";
 		
 		if(width!=undefined)
@@ -93,13 +78,13 @@ function hoverStyle(obj,style){
 		
 	//	obj.style= obj.style + ";border-style:solid;border-width:"+swidth+"px;border-color:"+sColor+";";
 	}
-		static boxShadow(obj){
+	static boxShadow(obj){
 		obj.style.boxShadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
 	}
-		static FullWidth(obj){
+	static FullWidth(obj){
 		obj.style.width="100%";
 	}
-		static styleButton(objBtn){
+	static styleButton(objBtn){
 		objBtn.style.backgroundColor="#4BCD37";
 		objBtn.style.borderSize=3;
 		objBtn.style.borderStyle="solid";
@@ -118,7 +103,7 @@ function hoverStyle(obj,style){
 		st = Miscellaneous.objectClone( objBtn.style) ; 
 		st.backgroundColor="#8db1c7";
 		
-		hoverStyle( objBtn , st );
+		Focus.LookFeel.hoverStyle( objBtn , st );
 		/*
 		var s=".button {";
 
@@ -139,23 +124,23 @@ function hoverStyle(obj,style){
 		   
 		return objBtn.style;
 	}
-		static dimention(obj,width,height){
+	static dimention(obj,width,height){
 		obj.style.width=width;
 		obj.style.height=height;
 		//obj.style =obj.style+";width:"+width;
 		//obj.style =obj.style+";height:"+height+";";
 	}
-		static margin(obj,val){
+	static margin(obj,val){
 		obj.style.margin = val+"px "+val+"px "+val+"px "+val+"px";
 	}
-		static padding(obj,val){
+	static padding(obj,val){
 		obj.style.padding = val+"px "+val+"px "+val+"px "+val+"px";
 	}
-		static AlignHCenter(obj)	{
+	static AlignHCenter(obj)	{
 		obj.style.marginLeft ="auto";
 		obj.style.marginRight ="auto";;
 	}
-		static AlignVCenter(obj)	{
+	static AlignVCenter(obj)	{
 		
 		obj.style.position="relative";// =obj.style+";display: flex;  justify-content: center;  flex-direction: column;";
 		obj.style.top="50%";
@@ -163,11 +148,11 @@ function hoverStyle(obj,style){
 		obj.style.msTransform= "translateY(50%)";
 		obj.style.transform="translateY(50%)";
 	}
-		static align(obj,vertical,horizontal)	{
+	static align(obj,vertical,horizontal)	{
 		obj.style =obj.style+";vertical-align:"+vertical+";";
 		obj.style =obj.style+";vertical-align:"+vertical+";";
 	}
-		static font(obj,family,size)	{
+	static font(obj,family,size)	{
 			if(family!=undefined )
 				obj.style.fontFamily=family;
 			else
@@ -177,8 +162,8 @@ function hoverStyle(obj,style){
 			else
 				obj.style.fontSize="17px";
 			obj.style.lineHeight="21px";
-		}
-		static colors(obj,color,bkColor)	{
+	}
+	static colors(obj,color,bkColor)	{
 		if(color!=undefined )
 			obj.style.color=color;
 		else
@@ -188,8 +173,23 @@ function hoverStyle(obj,style){
 		else
 			obj.style.backgroundColor ="#9999FF";
 
+	}
+	static hoverStyle(obj,style){
+		var color1=obj.style.backgroundColor;
+		var color2=style.backgroundColor;
+		obj.onmouseover=function(){
+			obj.style.backgroundColor=color2;
+		};
+	
+		obj.onmouseleave=function(){
+			obj.style.backgroundColor=color1;
+			obj.style.boxShadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
+		};
+		obj.onmouseenter=function(){
+		 obj.style.boxShadow="0 0 0 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)";
 		}
 	}
+}
 
 	class Focus_Layout{
 		static wizard(parent,fnWizPages,data){
@@ -646,6 +646,3 @@ function hoverStyle(obj,style){
 	}
 }
 
-
-	class FileSystem{	
-	}
