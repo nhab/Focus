@@ -5,15 +5,11 @@
          <meta charset="UTF-8"> 
          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script src="focus.js"></script>
-		<script src="focus.js"></script>
 
 	</head>
 	<body>
 		<form>
 			<script>
-				/*______________________________________________________*/
-
-
 				window.onload = function() {
 					// Initial states data
 					var data={};
@@ -66,33 +62,33 @@
 					
 					//look and feel :__________________________________
 					
-					 Focus_LookFeel.font(doc,"Open Sans,sans-serif","16px");
+					 Focus.LookFeel.font(doc,"Open Sans,sans-serif","16px");
 					 Miscellaneous.Attribute(doc,"style","	background-color: #baadff");
 					
-					 Focus_LookFeel.font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
-					 Focus_LookFeel.colors(lbl1);
+					 Focus.LookFeel.font(lbl1,"Advent Pro Thin,Open Sans,sans-serif","26px");
+					 Focus.LookFeel.colors(lbl1);
 					 var margin=20;
-					 Focus_LookFeel.border(c); 
-					 Focus_LookFeel.padding(c,"20");
-					 Focus_LookFeel.margin(c,"20");
-					 Focus_LookFeel.colors(c,undefined,"#ccaaff");
-					 Focus_LookFeel.boxShadow(txtName);
-					 Focus_LookFeel.font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
-                     Miscellaneous.setFunctionBulk(Focus_LookFeel.margin,[txtName,rbs,cbs],10);
-					 Focus_LookFeel.styleButton(b);
+					 Focus.LookFeel.border(c); 
+					 Focus.LookFeel.padding(c,"20");
+					 Focus.LookFeel.margin(c,"20");
+					 Focus.LookFeel.colors(c,undefined,"#ccaaff");
+					 Focus.LookFeel.boxShadow(txtName);
+					 Focus.LookFeel.font(b,"Arial Narrow,sans-serif Narrow,sans-serif","22px");
+                     Miscellaneous.setFunctionBulk(Focus.LookFeel.margin,[txtName,rbs,cbs],10);
+					 Focus.LookFeel.styleButton(b);
                  
 					 //cssSet(b,"waves-effect waves-light btn-large");
 					 //
-					 Focus_LookFeel.dimention(doc,"70%");
-					 Focus_LookFeel.border(doc);
-					 Focus_LookFeel.AlignHCenter(doc);
+					 Focus.LookFeel.dimention(doc,"70%");
+					 Focus.LookFeel.border(doc);
+					 Focus.LookFeel.AlignHCenter(doc);
 					
 					 //AlignVCenter(doc);
-					 Focus_LookFeel.padding(doc,40);
-					 Focus_LookFeel.margin(txtName,10);
+					 Focus.LookFeel.padding(doc,40);
+					 Focus.LookFeel.margin(txtName,10);
 					
 					//____________data		__________________________________ 			
- 					 Focus_Data.set_CheckBoxes(cbs,[1]);
+					Focus.Data.set_CheckBoxes(cbs,[1]);
 
 					//state and intraction :__________________________________	
                      // radio buttons intraction event {			
