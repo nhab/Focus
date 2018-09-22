@@ -6,7 +6,7 @@ Traditional web developement aproach needs more than 3 programming skill to writ
 and css ,plus thousands of libraries/frameworks.
 The easier aproach is to focus on javascript which is able to produce the html dom elements and css.In this way your efforts will be more effective. Focus.js is the answer for such a need.
 
-Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3 skills.
+Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3.
 
 It **generates Html DOM elements dynamically on the fly**.
 ## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo") 
