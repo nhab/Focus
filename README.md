@@ -35,7 +35,9 @@ It **generates Html DOM elements dynamically on the fly**. So you even do't need
   - :cloud: Lightweight.
   - :repeat: Extensibilty: Base Objects are in focusBase.js but you can make Compositeobjects on top of it.
   
-## key concept
+## Key concepts
+
+### Layout Generation
 when you use Focus.js functions,It **generates Html elements dynamically on the fly**.
 
 For example when you write:
