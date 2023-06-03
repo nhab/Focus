@@ -2,9 +2,17 @@
 ![]( https://github.com/nhab/Focus/blob/master/moto.png?raw=true "")
 
 # Focus.js
-Traditional web developement aproach needs more than 3 programming skill to write a single website:html,javascript
-and css ,plus thousands of libraries/frameworks.
-The easier aproach is to focus on javascript which is able to produce the html dom elements and css.In this way your efforts will be more effective. Focus.js is the answer for such a need.
+Focus.js is a replacement for CSS in html. 
+
+It is series of JavaScript functions that  are using DOM to manipulate html element color, position, dimension and more.
+
+Traditional web developement needs more than 3 programming skill to write a single website:html,javascript and css (+ many libraries/frameworks).
+
+The easier aproach is to focus on javascript which is more capable and more easer.
+
+Js is able to produce and manupulate the html elements Using it's DOM Class.
+
+In this way your efforts will be more effective. Focus.js is the answer for such a need.
 
 Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3.
 
