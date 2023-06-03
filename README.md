@@ -22,7 +22,7 @@ It **generates Html DOM elements dynamically on the fly**. So you even do't need
 -->
 ## Benifits
   - :arrow_right: Focus on coding instead of disruption made by switching between skills.
-  - :cloud: seperation of real concerns in front end developement: layout , look and feel and Intractions and states.
+  - :cloud: seperation of real concerns in front end developement: layout , look and feel , Intractions and states.
   - :pisces: Much less coding.
   - :no_mobile_phones: Much less errors.
   - :repeat: Much easier to follow your code.
