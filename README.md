@@ -16,7 +16,7 @@ In this way your efforts will be more effective. Focus.js is the answer for such
 
 Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3.
 
-It **generates Html DOM elements dynamically on the fly**.
+It **generates Html DOM elements dynamically on the fly**. So you even do't need to have any html code!
 <!--## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo") 
 ## [**Demo Objective**](https://nhab.github.io/Focus/demoObject.html "Demo objective") 
 -->
