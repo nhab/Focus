@@ -2,7 +2,7 @@
 ![]( https://github.com/nhab/Focus/blob/master/moto.png?raw=true "")
 
 # Focus.js
-Focus.js is a replacement for CSS in HTML. 
+Focus.js is a replacement for CSS (and even HTML) in web development. 
 
 It is a series of JavaScript functions that  are using DOM to manipulate HTML element color, position, dimension, and more.
 
