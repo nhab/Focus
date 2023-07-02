@@ -2,55 +2,73 @@
 ![]( https://github.com/nhab/Focus/blob/master/moto.png?raw=true "")
 
 # Focus.js
-Focus.js is a replacement for CSS in html. 
+Focus.js is a replacement for CSS in HTML. 
 
-It is series of JavaScript functions that  are using DOM to manipulate html element color, position, dimension and more.
+It is a series of JavaScript functions that  are using DOM to manipulate HTML element color, position, dimension, and more.
 
-Traditional web developement needs more than 3 programming skill to write a single website:html,javascript and css (+ many libraries/frameworks).
+Traditional web development needs more than 3 programming skills to write a single website:html, javascript, and CSS (+ many libraries/frameworks).
 
-The easier aproach is to focus on javascript which is more capable and more easer.
+The easier approach is to focus on javascript which is more capable and easier.
 
-Js is able to produce and manupulate the html elements Using it's DOM Class.
+Js is able to produce and manipulate the HTML elements Using its DOM Class.
 
-In this way your efforts will be more effective. Focus.js is the answer for such a need.
+In this way, your efforts will be more effective. Focus.js is the answer to such a need.
 
-Focus.js is framework for make coding and debuging the web development much easier ,by **focusing on one skill** instead of 3.
+Focus.js is a framework for making coding and debugging web development much more straightforward, by **focusing on one skill** instead of 3.
 
-It **generates Html DOM elements dynamically on the fly**. So you even do't need to have any html code!
+It **generates Html DOM elements dynamically on the fly**. So you even don't need to have any html code!
 <!--## [**Demo**](https://nhab.github.io/Focus/demo.html "Demo") 
 ## [**Demo Objective**](https://nhab.github.io/Focus/demoObject.html "Demo objective") 
 -->
-## Benifits
+## Benefits
   - :arrow_right: Focus on coding instead of disruption made by switching between skills.
-  - :cloud: seperation of real concerns in front end developement: layout , look and feel , Intractions and states.
+  - :cloud: Separation of real concerns in front-end development: layout, look and feel, Intractions, and states.
   - :pisces: Much less coding.
-  - :no_mobile_phones: Much less errors.
+  - :no_mobile_phones: Much fewer errors.
   - :repeat: Much easier to follow your code.
   - :eight_spoked_asterisk: Straightforward debugging.
   - :fast_forward: Much more speed of product delivery.
-  - :diamond_shape_with_a_dot_inside: Endless posibilities and extensibility
-  - :do_not_litter: no dependency to other libraries.
+  - :diamond_shape_with_a_dot_inside: Endless possibilities and extensibility
+  - :do_not_litter: no dependency on other libraries.
   - :closed_lock_with_key: Full compatibility.
   - :eyes: Minimum learning curve and easy to use.
   - :cloud: Lightweight.
-  - :repeat: Extensibilty: Base Objects are in focusBase.js but you can make Compositeobjects on top of it.
+  - :repeat: Extensibility: Base Objects are in focusBase.js but you can make Composite objects on top of it.
   
 ## Key concepts
 
 ### Layout Generation
-when you use Focus.js functions,It **generates Html elements dynamically on the fly**.
+When you use Focus.js functions, It **generates Html elements dynamically on the fly**.
 
 For example when you write:
 ```javascript
   Layout.RadioBoxes("Choose one: ",["Conventinal","none-conventional"]);
 ```
 
-it generates these code dynamically on the fly :
+it generates these codes dynamically on the fly :
 ```html
 <div>
   <p> Type </p>
   <input  name='rb1' type='radio'  />Conventinal</input>
   <input  name='rb2' type='radio'  />none-Conventinal</input>
 </div>
+```
+**Using Focus.js elements inside your HTML:**
+for example to insert a radio button inside div2
+```html
+<div id="div1">
+  <script src='mysrc1.js'></script>
+</div>
+<div id="div2">
+  <script src='mysrc2.js'></script>
+</div>
+
+```
+
+```javascript
+//mysrc2.js
+const parentElement = document.currentScript.parentNode;
+
+Layout.RadioBoxes(parentElement,"Choose one: ",["Conventinal","none-conventional"]);
 ```
 [//]: ## [**Reference**](https://nhab.github.io/Focus/Reference-Objective.txt "Reference")
