@@ -106,4 +106,23 @@ Layout.RadioBoxes(parentElement,"Choose one: ",["Conventinal","none-conventional
 	Table ( parent)
  
 	Header ( parent, title)
-	
+**LookFeel functions**
+
+	Css (obj,cssName)  // set css to the object
+	Border(obj,width,color)
+	BoxShadow(obj)
+	Dimensions(obj,width,height)
+	FullWidth(obj) 
+	StyleButton(objBtn)
+	Margin(obj,val)
+	Padding(obj,val)
+	AlignHCenter(obj)
+	AlignVCenter(obj)
+	align(obj,vertical,horizontal)
+	font(obj,family,size)
+	colors(obj,color,backColor)
+	hoverStyle(obj,style)
+
+**ComplexComponents**
+
+	simpleDatePicker(parent,title)
