@@ -34,6 +34,7 @@ It **generates Html DOM elements dynamically on the fly**. So you even don't nee
   - :eyes: Minimum learning curve and easy to use.
   - :cloud: Lightweight.
   - :repeat: Extensibility: Base Objects are in focusBase.js but you can make Composite objects on top of it.
+  - :cloud: Can be used both in server side and in local.
   
 ## Key concepts
 
@@ -72,6 +73,13 @@ const parentElement = document.currentScript.parentNode;
 
 Layout.RadioBoxes(parentElement,"Choose one: ",["Conventinal","none-conventional"]);
 ```
+
+## Demo
+There are two  demos for two editions of NodeJs and local edition:
+
+1- In \Demo -NodeJs\ folder: for server side version
+2- In \Demo -local\ folder : for local usage
+ 
 ## Reference
 **FocusLayout functions:**
 
