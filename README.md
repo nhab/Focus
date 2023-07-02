@@ -72,4 +72,38 @@ const parentElement = document.currentScript.parentNode;
 
 Layout.RadioBoxes(parentElement,"Choose one: ",["Conventinal","none-conventional"]);
 ```
-<!-- ## [**Reference**](https://nhab.github.io/Focus/Reference-Objective.txt "Reference")-->
+## Reference
+**FocusLayout functions:**
+
+	NewLine ( parent) 				         // is <br>
+ 
+	RadioBoxes ( parent, title,arrItems, name) // is a group of radio boxes
+ 
+	CheckBoxes ( parent, title, arrItems)		 // is a group of checkBoxes
+ 
+	Range ( parent, title, arrValues )		 // is a numbers range selector
+ 
+	Lists( parent, arrItems)					 // is a unordered list
+ 
+	Image ( parent, source,CSS)				 // is an image
+ 
+	Button ( parent, title,onclickFunction)
+ 
+	Div ( parent)
+ 
+	Container ( parent)
+ 
+	Link ( parent, title, url)
+ 
+	Label ( parent, title) 
+ 
+	CheckBox ( parent, title)
+
+	TextBox ( parent, title, val)	
+ 
+	DropDown ( parent, title, arrItems)	
+ 
+	Table ( parent)
+ 
+	Header ( parent, title)
+	
