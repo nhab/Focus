@@ -54,7 +54,8 @@ it generates these codes dynamically on the fly :
 </div>
 ```
 **Using Focus.js elements inside your HTML:**
-for example to insert a radio button inside div2
+
+For example to insert a radio button inside div2
 ```html
 <div id="div1">
   <script src='mysrc1.js'></script>
@@ -71,4 +72,4 @@ const parentElement = document.currentScript.parentNode;
 
 Layout.RadioBoxes(parentElement,"Choose one: ",["Conventinal","none-conventional"]);
 ```
-[//]: ## [**Reference**](https://nhab.github.io/Focus/Reference-Objective.txt "Reference")
+<!-- ## [**Reference**](https://nhab.github.io/Focus/Reference-Objective.txt "Reference")-->
